@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\ArchWorkspace\Arch_Lab1\SOCMF.ncd
+OUTFILE=E:\ArchWorkspace\Arch_Lab1\SOCMF.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=E:\ArchWorkspace\Arch_Lab1
+LICENSE=WebPack
+USER_INFO=210957650_0_0_310

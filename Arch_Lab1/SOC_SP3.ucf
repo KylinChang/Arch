@@ -1,0 +1,113 @@
+NET "clk_50mhz" loc = "T9";
+NET "clk_50mhz"	PERIOD = 20ns;   # 20ns = 50Mhz
+NET "SW[7]" loc = "K13";
+NET "SW[6]" loc = "K14";
+NET "SW[5]" loc = "J13";
+NET "SW[4]" loc = "J14";
+NET "SW[3]" loc = "H13";
+NET "SW[2]" loc = "H14";
+NET "SW[1]" loc = "G12";
+NET "SW[0]" loc = "F12";
+
+NET "LED[0]" loc = "K12";
+NET "LED[1]" loc = "P14";
+NET "LED[2]" loc = "L12";
+NET "LED[3]" loc = "N14";
+NET "LED[4]" loc = "P13";
+NET "LED[5]" loc = "N12";
+NET "LED[6]" loc = "P12";
+NET "LED[7]" loc = "P11";
+
+NET "AN[0]" loc = "D14";
+NET "AN[1]" loc = "G14";
+NET "AN[2]" loc = "F14";
+NET "AN[3]" loc = "E13";
+
+NET "BTN[3]" loc = "L14";			#reset
+NET "BTN[2]" loc = "L13";
+NET "BTN[1]" loc = "M14";
+NET "BTN[0]" loc = "M13";
+
+NET "SEGMENT[7]" LOC = "p16";
+NET "SEGMENT[0]" LOC = "e14";		#a
+NET "SEGMENT[1]" LOC = "g13";		#b
+NET "SEGMENT[2]" LOC = "n15";
+NET "SEGMENT[3]" LOC = "p15";
+NET "SEGMENT[4]" LOC = "r16";
+NET "SEGMENT[5]" LOC = "f13";
+NET "SEGMENT[6]" LOC = "n16";		#g
+
+
+
+#NET "sram_addre<0>" LOC = "L5";
+#NET "sram_addre<1>" LOC = "N3";
+#NET "sram_addre<2>" LOC = "M4";
+#NET "sram_addre<3>" LOC = "M3";
+#NET "sram_addre<4>" LOC = "L4";
+#NET "sram_addre<5>" LOC = "G4";
+#NET "sram_addre<6>" LOC = "F3";
+#NET "sram_addre<7>" LOC = "F4";
+#NET "sram_addre<8>" LOC = "E3";
+#NET "sram_addre<9>" LOC = "E4";
+#NET "sram_addre<10>" LOC = "G5";
+#NET "sram_addre<11>" LOC = "H3";
+#NET "sram_addre<12>" LOC = "H4";
+#NET "sram_addre<13>" LOC = "J4";
+#NET "sram_addre<14>" LOC = "J3";
+#NET "sram_addre<15>" LOC = "K3";
+#NET "sram_addre<16>" LOC = "K5";
+#NET "sram_addre<17>" LOC = "L3";
+#
+#NET "DIO<0>" LOC = "N7";
+#NET "DIO<1>" LOC = "T8";
+#NET "DIO<2>" LOC = "R6";
+#NET "DIO<3>" LOC = "T5";
+#NET "DIO<4>" LOC = "R5";
+#NET "DIO<5>" LOC = "C2";
+#NET "DIO<6>" LOC = "C1";
+#NET "DIO<7>" LOC = "B1";
+#
+#NET "DIO<8>" LOC = "D3";
+#NET "DIO<9>" LOC = "P8";
+#NET "DIO<10>" LOC = "F2";
+#NET "DIO<11>" LOC = "H1";
+#NET "DIO<12>" LOC = "J2";
+#NET "DIO<13>" LOC = "L2";
+#NET "DIO<14>" LOC = "P1";
+#NET "DIO<15>" LOC = "R1";
+#
+#NET "DIO<16>" LOC = "P2";
+#NET "DIO<17>" LOC = "N2";
+#NET "DIO<18>" LOC = "M2";
+#NET "DIO<19>" LOC = "K1";
+#NET "DIO<20>" LOC = "J1";
+#NET "DIO<21>" LOC = "G2";
+#NET "DIO<22>" LOC = "E1";
+#NET "DIO<23>" LOC = "D1";
+#
+#NET "DIO<24>" LOC = "D2";
+#NET "DIO<25>" LOC = "E2";
+#NET "DIO<26>" LOC = "G1";
+#NET "DIO<27>" LOC = "F5";
+#NET "DIO<28>" LOC = "C3";
+#NET "DIO<29>" LOC = "K2";
+#NET "DIO<30>" LOC = "M1";
+#NET "DIO<31>" LOC = "N1";
+#
+#NET "LB1"  LOC = "P6"; 
+#NET "LB2"  LOC = "P5"; 
+#NET "OE"  LOC = "K4"; 
+#NET "UB1"  LOC = "T4"; 
+#NET "UB2"  LOC = "R4"; 
+#NET "WE"  LOC = "G3"; 
+#NET "CE1"  LOC = "P7"; 
+#NET "CE2" LOC = "N5"; 
+#
+#NET "PS2_clk" LOC = "M16";
+#NET "PS2_Data" LOC = "M15";
+#
+#NET "vga_blue" LOC = "r11";
+#NET "vga_green" LOC = "t12";
+#NET "vga_hs" LOC = "r9";
+#NET "vga_red" LOC = "r12";
+#NET "vga_vs" LOC = "t10";
