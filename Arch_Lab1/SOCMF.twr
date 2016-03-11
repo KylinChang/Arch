@@ -37,18 +37,18 @@ Setup/Hold to clock clk_100mhz
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-BTN<0>      |    3.581(R)|      SLOW  |   -0.282(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-BTN<1>      |    4.063(R)|      SLOW  |   -1.096(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-BTN<2>      |    2.901(R)|      SLOW  |   -0.329(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-BTN<3>      |    3.847(R)|      SLOW  |   -0.436(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<0>       |    6.043(R)|      SLOW  |   -0.861(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<1>       |    5.755(R)|      SLOW  |   -0.351(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<2>       |    5.778(R)|      SLOW  |   -0.301(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<3>       |    6.235(R)|      SLOW  |   -0.671(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<4>       |    5.600(R)|      SLOW  |   -0.341(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<5>       |    5.916(R)|      SLOW  |   -0.740(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SW<6>       |    5.891(R)|      SLOW  |   -0.249(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<7>       |    6.315(R)|      SLOW  |   -1.163(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+BTN<0>      |    3.649(R)|      SLOW  |   -0.344(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+BTN<1>      |    4.342(R)|      SLOW  |   -0.948(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+BTN<2>      |    3.112(R)|      SLOW  |   -0.154(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+BTN<3>      |    3.234(R)|      SLOW  |   -0.296(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+SW<0>       |    6.057(R)|      SLOW  |   -0.901(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+SW<1>       |    5.478(R)|      SLOW  |   -1.104(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SW<2>       |    5.427(R)|      SLOW  |   -1.150(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+SW<3>       |    6.893(R)|      SLOW  |   -1.251(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SW<4>       |    6.365(R)|      SLOW  |   -1.355(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SW<5>       |    5.904(R)|      SLOW  |   -1.127(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SW<6>       |    5.477(R)|      SLOW  |   -0.481(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+SW<7>       |    5.782(R)|      SLOW  |   -0.977(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock clk_100mhz to Pad
@@ -56,18 +56,18 @@ Clock clk_100mhz to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-AN<0>       |        10.528(R)|      SLOW  |         5.663(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-AN<1>       |        10.896(R)|      SLOW  |         6.161(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-AN<2>       |        10.587(R)|      SLOW  |         5.799(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-AN<3>       |        10.499(R)|      SLOW  |         5.851(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<0>  |        14.675(R)|      SLOW  |         6.298(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<1>  |        14.892(R)|      SLOW  |         6.523(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<2>  |        14.209(R)|      SLOW  |         6.133(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<3>  |        14.922(R)|      SLOW  |         6.519(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<4>  |        14.741(R)|      SLOW  |         6.209(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<5>  |        15.334(R)|      SLOW  |         6.492(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<6>  |        14.723(R)|      SLOW  |         6.443(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<7>  |        12.824(R)|      SLOW  |         6.221(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+AN<0>       |         9.572(R)|      SLOW  |         5.111(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+AN<1>       |         9.447(R)|      SLOW  |         5.192(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+AN<2>       |         9.256(R)|      SLOW  |         5.052(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+AN<3>       |         9.399(R)|      SLOW  |         5.074(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<0>  |        13.667(R)|      SLOW  |         5.727(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<1>  |        14.054(R)|      SLOW  |         5.825(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<2>  |        14.051(R)|      SLOW  |         5.618(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<3>  |        14.129(R)|      SLOW  |         5.961(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<4>  |        14.192(R)|      SLOW  |         5.843(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<5>  |        14.011(R)|      SLOW  |         5.916(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<6>  |        13.843(R)|      SLOW  |         5.620(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<7>  |        13.309(R)|      SLOW  |         6.322(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk_100mhz
@@ -75,11 +75,11 @@ Clock to Setup on destination clock clk_100mhz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_100mhz     |    5.719|         |         |         |
+clk_100mhz     |    5.370|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Sat Mar 05 00:29:10 2016 
+Analysis completed Wed Mar 09 19:44:26 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:

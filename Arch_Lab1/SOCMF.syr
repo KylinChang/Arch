@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Reading design: SOCMF.prj
 
@@ -221,7 +221,7 @@ Elaborating module <mux8to1_32>.
 Elaborating module <Regs>.
 
 Elaborating module <REG32>.
-WARNING:HDLCompiler:604 - "E:\ArchWorkspace\Arch_Lab1\data_path.v" Line 163: Module instantiation should have an instance name
+WARNING:HDLCompiler:604 - "E:\ArchWorkspace\Arch_Lab1\data_path.v" Line 164: Module instantiation should have an instance name
 
 Elaborating module <Ext_32>.
 
@@ -294,11 +294,12 @@ WARNING:HDLCompiler:1499 - "E:\ArchWorkspace\Arch_Lab1\ipcore_dir\VRAM_B.v" Line
 WARNING:HDLCompiler:604 - "E:\ArchWorkspace\Arch_Lab1\SOCMF.v" Line 304: Module instantiation should have an instance name
 
 Elaborating module <Font>.
-WARNING:HDLCompiler:604 - "E:\ArchWorkspace\Arch_Lab1\SOCMF.v" Line 311: Module instantiation should have an instance name
+WARNING:HDLCompiler:604 - "E:\ArchWorkspace\Arch_Lab1\SOCMF.v" Line 312: Module instantiation should have an instance name
 
 Elaborating module <Reg_Font>.
-WARNING:HDLCompiler:413 - "E:\ArchWorkspace\Arch_Lab1\Reg_Font.v" Line 75: Result of 32-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:604 - "E:\ArchWorkspace\Arch_Lab1\SOCMF.v" Line 351: Module instantiation should have an instance name
+WARNING:HDLCompiler:413 - "E:\ArchWorkspace\Arch_Lab1\Reg_Font.v" Line 70: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "E:\ArchWorkspace\Arch_Lab1\Reg_Font.v" Line 71: Result of 32-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:604 - "E:\ArchWorkspace\Arch_Lab1\SOCMF.v" Line 353: Module instantiation should have an instance name
 
 Elaborating module <keyboard>.
 WARNING:HDLCompiler:634 - "E:\ArchWorkspace\Arch_Lab1\SOCMF.v" Line 44: Net <C[9]> does not have a driver.
@@ -833,29 +834,34 @@ Unit <Font> synthesized.
 
 Synthesizing Unit <Reg_Font>.
     Related source file is "E:\ArchWorkspace\Arch_Lab1\Reg_Font.v".
-    Found 8-bit subtractor for signal <GND_52_o_GND_52_o_sub_6_OUT<7:0>> created at line 75.
-    Found 32-bit 32-to-1 multiplexer for signal <_n0204> created at line 76.
-WARNING:Xst:737 - Found 1-bit latch for signal <num<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <num<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <num<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <num<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:647 - Input <PC<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <PC<31:10>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit adder for signal <PC[9]_GND_52_o_add_6_OUT> created at line 70.
+    Found 8-bit subtractor for signal <GND_52_o_GND_52_o_sub_8_OUT<7:0>> created at line 71.
+    Found 32-bit 32-to-1 multiplexer for signal <_n0237> created at line 82.
 WARNING:Xst:737 - Found 1-bit latch for signal <vga_data<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <vga_data<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <vga_data<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <vga_data<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <vga_data<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <vga_data<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <vga_data<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <vga_data<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp_we>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 8-bit comparator lessequal for signal <n0000> created at line 70
-    Found 8-bit comparator greater for signal <col[7]_GND_52_o_LessThan_2_o> created at line 70
-    Found 8-bit comparator lessequal for signal <n0004> created at line 70
-    Found 8-bit comparator lessequal for signal <n0007> created at line 70
+WARNING:Xst:737 - Found 1-bit latch for signal <num<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <num<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <num<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <num<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <GPIO_VGA_WE>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 8-bit comparator lessequal for signal <n0000> created at line 67
+    Found 8-bit comparator greater for signal <col[7]_GND_52_o_LessThan_2_o> created at line 67
+    Found 8-bit comparator lessequal for signal <n0004> created at line 67
+    Found 8-bit comparator lessequal for signal <n0007> created at line 67
+    Found 8-bit comparator equal for signal <PC[9]_row[7]_equal_10_o> created at line 74
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  12 Latch(s).
-	inferred   4 Comparator(s).
-	inferred   2 Multiplexer(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  13 Latch(s).
+	inferred   5 Comparator(s).
+	inferred   9 Multiplexer(s).
 Unit <Reg_Font> synthesized.
 
 Synthesizing Unit <keyboard>.
@@ -876,7 +882,7 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 96
  64x1-bit single-port Read Only RAM                    : 96
-# Adders/Subtractors                                   : 16
+# Adders/Subtractors                                   : 17
  10-bit adder                                          : 2
  11-bit subtractor                                     : 2
  15-bit adder                                          : 1
@@ -886,6 +892,7 @@ Macro Statistics
  33-bit adder                                          : 3
  33-bit subtractor                                     : 2
  6-bit subtractor                                      : 1
+ 8-bit adder                                           : 1
  8-bit subtractor                                      : 1
  9-bit subtractor                                      : 1
 # Registers                                            : 40
@@ -900,16 +907,17 @@ Macro Statistics
  33-bit register                                       : 1
  8-bit register                                        : 2
  992-bit register                                      : 1
-# Latches                                              : 13
- 1-bit latch                                           : 13
-# Comparators                                          : 15
+# Latches                                              : 14
+ 1-bit latch                                           : 14
+# Comparators                                          : 16
  1-bit comparator not equal                            : 1
  10-bit comparator greater                             : 6
  10-bit comparator lessequal                           : 4
+ 8-bit comparator equal                                : 1
  8-bit comparator greater                              : 1
  8-bit comparator lessequal                            : 3
-# Multiplexers                                         : 145
- 1-bit 2-to-1 multiplexer                              : 61
+# Multiplexers                                         : 152
+ 1-bit 2-to-1 multiplexer                              : 68
  10-bit 2-to-1 multiplexer                             : 1
  16-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 22
@@ -2065,7 +2073,7 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 96
  64x1-bit single-port distributed Read Only RAM        : 96
-# Adders/Subtractors                                   : 13
+# Adders/Subtractors                                   : 14
  11-bit subtractor                                     : 2
  15-bit adder                                          : 1
  16-bit adder                                          : 1
@@ -2073,20 +2081,22 @@ Macro Statistics
  33-bit adder                                          : 3
  33-bit subtractor                                     : 2
  6-bit subtractor                                      : 2
+ 8-bit adder                                           : 1
  8-bit subtractor                                      : 1
 # Counters                                             : 3
  10-bit up counter                                     : 2
  32-bit up counter                                     : 1
 # Registers                                            : 1278
  Flip-Flops                                            : 1278
-# Comparators                                          : 15
+# Comparators                                          : 16
  1-bit comparator not equal                            : 1
  10-bit comparator greater                             : 6
  10-bit comparator lessequal                           : 4
+ 8-bit comparator equal                                : 1
  8-bit comparator greater                              : 1
  8-bit comparator lessequal                            : 3
-# Multiplexers                                         : 207
- 1-bit 2-to-1 multiplexer                              : 126
+# Multiplexers                                         : 214
+ 1-bit 2-to-1 multiplexer                              : 133
  10-bit 2-to-1 multiplexer                             : 1
  16-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 21
@@ -2157,7 +2167,7 @@ WARNING:Xst:3002 - This design contains one or more registers/latches that are d
   Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
 
   List of register instances with asynchronous set and reset:
-    _i000015/temp_we in unit <SOCMF>
+    _i000015/GPIO_VGA_WE in unit <SOCMF>
 
 
   List of register instances with asynchronous set or reset and opposite initialization value:
@@ -2239,7 +2249,7 @@ FlipFlop muliti_cpu/U1_2/REG32_IR/Q_17 has been replicated 12 time(s)
 FlipFlop muliti_cpu/U1_2/REG32_IR/Q_18 has been replicated 1 time(s)
 FlipFlop muliti_cpu/U1_2/REG32_IR/Q_19 has been replicated 1 time(s)
 FlipFlop muliti_cpu/U1_2/REG32_IR/Q_20 has been replicated 1 time(s)
-FlipFlop muliti_cpu/U1_2/REG32_IR/Q_21 has been replicated 11 time(s)
+FlipFlop muliti_cpu/U1_2/REG32_IR/Q_21 has been replicated 12 time(s)
 FlipFlop muliti_cpu/U1_2/REG32_IR/Q_22 has been replicated 11 time(s)
 Latch _i000012/blue_1 has been replicated 7 time(s) to handle iob=true attribute.
 
@@ -2254,8 +2264,8 @@ Unit <SOCMF> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1350
- Flip-Flops                                            : 1350
+# Registers                                            : 1351
+ Flip-Flops                                            : 1351
 # Shift Registers                                      : 2
  3-bit shift register                                  : 1
  4-bit shift register                                  : 1
@@ -2281,35 +2291,35 @@ Top Level Output File Name         : SOCMF.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 4475
+# BELS                             : 4486
 #      GND                         : 5
 #      INV                         : 58
 #      LUT1                        : 112
-#      LUT2                        : 84
-#      LUT3                        : 1366
+#      LUT2                        : 87
+#      LUT3                        : 1367
 #      LUT3_D                      : 2
-#      LUT4                        : 316
+#      LUT4                        : 314
 #      LUT4_L                      : 1
-#      LUT5                        : 490
-#      LUT6                        : 1345
+#      LUT5                        : 487
+#      LUT6                        : 1356
 #      MUXCY                       : 257
 #      MUXF5                       : 100
 #      MUXF6                       : 40
-#      MUXF7                       : 52
+#      MUXF7                       : 53
 #      VCC                         : 5
 #      XORCY                       : 242
-# FlipFlops/Latches                : 1523
+# FlipFlops/Latches                : 1525
 #      FD                          : 172
 #      FD_1                        : 14
 #      FDC                         : 131
 #      FDCE                        : 1027
 #      FDCE_1                      : 2
-#      FDE                         : 111
+#      FDE                         : 112
 #      FDP                         : 21
 #      FDR                         : 14
 #      FDRE                        : 10
 #      LD                          : 15
-#      LDE_1                       : 6
+#      LDE_1                       : 7
 # RAMS                             : 7
 #      RAMB16BWER                  : 2
 #      RAMB8BWER                   : 5
@@ -2329,17 +2339,17 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1515  out of  18224     8%  
- Number of Slice LUTs:                 3776  out of   9112    41%  
-    Number used as Logic:              3774  out of   9112    41%  
+ Number of Slice Registers:            1517  out of  18224     8%  
+ Number of Slice LUTs:                 3786  out of   9112    41%  
+    Number used as Logic:              3784  out of   9112    41%  
     Number used as Memory:                2  out of   2176     0%  
        Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4941
-   Number with an unused Flip Flop:    3426  out of   4941    69%  
-   Number with an unused LUT:          1165  out of   4941    23%  
-   Number of fully used LUT-FF pairs:   350  out of   4941     7%  
+ Number of LUT Flip Flop pairs used:   4952
+   Number with an unused Flip Flop:    3435  out of   4952    69%  
+   Number with an unused LUT:          1166  out of   4952    23%  
+   Number of fully used LUT-FF pairs:   351  out of   4952     7%  
    Number of unique control sets:        32
 
 IO Utilization: 
@@ -2373,17 +2383,17 @@ Clock Information:
 -----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                                                                 | Clock buffer(FF name)                                                                                                             | Load  |
 -----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
-_i000012/GND_41_o_GND_41_o_AND_146_o(_i000012/GND_41_o_GND_41_o_AND_146_o9:O)| NONE(*)(_i000012/blue_1)                                                                                                          | 8     |
-_i000015/GND_52_o_GND_52_o_AND_330_o(_i000015/GND_52_o_GND_52_o_AND_330_o:O) | NONE(*)(_i000015/num_0)                                                                                                           | 4     |
-_i000015/temp_we                                                             | NONE(_i000015/vga_data_0)                                                                                                         | 6     |
+_i000012/GND_41_o_GND_41_o_AND_146_o(_i000012/GND_41_o_GND_41_o_AND_146_o8:O)| NONE(*)(_i000012/blue_1)                                                                                                          | 8     |
+_i000015/GND_52_o_GND_52_o_AND_379_o(_i000015/GND_52_o_GND_52_o_AND_379_o:O) | NONE(*)(_i000015/num_0)                                                                                                           | 4     |
+_i000015/GPIO_VGA_WE                                                         | NONE(_i000015/vga_data_5)                                                                                                         | 7     |
 clk_100mhz                                                                   | BUFGP                                                                                                                             | 139   |
 _i000016/PS2Cf                                                               | BUFG                                                                                                                              | 18    |
 _i000003/clk25                                                               | BUFG                                                                                                                              | 39    |
-_i000003/clk_out(_i000003/Mmux_clk_out11:O)                                  | BUFG(*)(muliti_cpu/U1_2/U2/register_31_991)                                                                                       | 1285  |
+_i000003/clk_out(_i000003/Mmux_clk_out11:O)                                  | BUFG(*)(muliti_cpu/U1_2/U2/register_31_991)                                                                                       | 1286  |
 _i000003/clkdiv_7                                                            | BUFG                                                                                                                              | 35    |
 _i000008/rst                                                                 | NONE(_i000005/Disp_num_31_LD)                                                                                                     | 2     |
 _i000010/N1                                                                  | NONE(_i000010/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)| 2     |
-_i000015/temp_we_G(_i000015/temp_we_G:O)                                     | NONE(*)(_i000015/temp_we)                                                                                                         | 1     |
+_i000015/GPIO_VGA_WE_G(_i000015/GPIO_VGA_WE_G:O)                             | NONE(*)(_i000015/GPIO_VGA_WE)                                                                                                     | 1     |
 -----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
 (*) These 4 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -2455,10 +2465,10 @@ Delay:               1.415ns (Levels of Logic = 0)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock '_i000003/clk25'
-  Clock period: 4.958ns (frequency: 201.682MHz)
+  Clock period: 4.953ns (frequency: 201.895MHz)
   Total number of paths / destination ports: 388 / 69
 -------------------------------------------------------------------------
-Delay:               4.958ns (Levels of Logic = 2)
+Delay:               4.953ns (Levels of Logic = 2)
   Source:            _i000011/vc_0 (FF)
   Destination:       _i000011/vc_9 (FF)
   Source Clock:      _i000003/clk25 rising
@@ -2468,18 +2478,18 @@ Delay:               4.958ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q           106   0.447   2.238  _i000011/vc_0 (_i000011/vc_0)
-     LUT6:I1->O            1   0.203   0.580  _i000011/_n0043_SW0 (N155)
+     FDRE:C->Q           104   0.447   2.232  _i000011/vc_0 (_i000011/vc_0)
+     LUT6:I1->O            1   0.203   0.580  _i000011/_n0043_SW0 (N166)
      LUT6:I5->O           10   0.205   0.856  _i000011/_n0043 (_i000011/_n0043)
      FDRE:R                    0.430          _i000011/vc_0
     ----------------------------------------
-    Total                      4.958ns (1.285ns logic, 3.673ns route)
+    Total                      4.953ns (1.285ns logic, 3.668ns route)
                                        (25.9% logic, 74.1% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock '_i000003/clk_out'
   Clock period: 13.998ns (frequency: 71.439MHz)
-  Total number of paths / destination ports: 968193039 / 2391
+  Total number of paths / destination ports: 968157495 / 2393
 -------------------------------------------------------------------------
 Delay:               6.999ns (Levels of Logic = 8)
   Source:            muliti_cpu/U11/IorD_1 (FF)
@@ -2522,7 +2532,7 @@ Delay:               4.466ns (Levels of Logic = 3)
     ----------------------------------------  ------------
      FDC:C->Q             10   0.447   0.857  _i000009/counter0_32 (_i000009/counter0_32)
      LUT3:I2->O           31   0.205   1.525  _i000009/Mmux_counter_Ctrl[2]_counter0[32]_wide_mux_26_OUT1111 (_i000009/Mmux_counter_Ctrl[2]_counter0[32]_wide_mux_26_OUT111)
-     LUT5:I1->O            1   0.203   0.924  _i000009/Mmux_counter_Ctrl[2]_counter0[32]_wide_mux_26_OUT24_SW0 (N91)
+     LUT5:I1->O            1   0.203   0.924  _i000009/Mmux_counter_Ctrl[2]_counter0[32]_wide_mux_26_OUT24_SW0 (N102)
      LUT5:I0->O            1   0.203   0.000  _i000009/Mmux_counter_Ctrl[2]_counter0[32]_wide_mux_26_OUT24 (_i000009/counter_Ctrl[2]_counter0[32]_wide_mux_26_OUT<30>)
      FDC:D                     0.102          _i000009/counter0_30
     ----------------------------------------
@@ -2530,26 +2540,26 @@ Delay:               4.466ns (Levels of Logic = 3)
                                        (26.0% logic, 74.0% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock '_i000015/temp_we_G'
-  Clock period: 2.040ns (frequency: 490.196MHz)
+Timing constraint: Default period analysis for Clock '_i000015/GPIO_VGA_WE_G'
+  Clock period: 2.195ns (frequency: 455.529MHz)
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Delay:               2.040ns (Levels of Logic = 1)
-  Source:            _i000015/temp_we (LATCH)
-  Destination:       _i000015/temp_we (LATCH)
-  Source Clock:      _i000015/temp_we_G falling
-  Destination Clock: _i000015/temp_we_G falling
+Delay:               2.195ns (Levels of Logic = 1)
+  Source:            _i000015/GPIO_VGA_WE (LATCH)
+  Destination:       _i000015/GPIO_VGA_WE (LATCH)
+  Source Clock:      _i000015/GPIO_VGA_WE_G falling
+  Destination Clock: _i000015/GPIO_VGA_WE_G falling
 
-  Data Path: _i000015/temp_we to _i000015/temp_we
+  Data Path: _i000015/GPIO_VGA_WE to _i000015/GPIO_VGA_WE
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q              19   0.498   1.300  _i000015/temp_we (_i000015/temp_we)
-     LUT3:I0->O            1   0.205   0.000  _i000015/temp_we_D (_i000015/temp_we_D)
-     LD:D                      0.037          _i000015/temp_we
+     LD:G->Q              20   0.498   1.457  _i000015/GPIO_VGA_WE (_i000015/GPIO_VGA_WE)
+     LUT6:I0->O            1   0.203   0.000  _i000015/GPIO_VGA_WE_D (_i000015/GPIO_VGA_WE_D)
+     LD:D                      0.037          _i000015/GPIO_VGA_WE
     ----------------------------------------
-    Total                      2.040ns (0.740ns logic, 1.300ns route)
-                                       (36.3% logic, 63.7% route)
+    Total                      2.195ns (0.738ns logic, 1.457ns route)
+                                       (33.6% logic, 66.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock '_i000003/clk25'
@@ -2700,7 +2710,7 @@ Offset:              3.648ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock '_i000003/clk25'
   Total number of paths / destination ports: 14 / 2
 -------------------------------------------------------------------------
-Offset:              6.266ns (Levels of Logic = 3)
+Offset:              6.463ns (Levels of Logic = 3)
   Source:            _i000011/vc_5 (FF)
   Destination:       vsync (PAD)
   Source Clock:      _i000003/clk25 rising
@@ -2709,13 +2719,13 @@ Offset:              6.266ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            14   0.447   1.302  _i000011/vc_5 (_i000011/vc_5)
-     LUT5:I0->O            2   0.203   0.961  _i000011/SF111 (_i000011/SF11)
+     FDRE:C->Q            23   0.447   1.498  _i000011/vc_5 (_i000011/vc_5)
+     LUT5:I0->O            2   0.203   0.961  _i000011/SF311 (_i000011/SF31)
      LUT5:I0->O            1   0.203   0.579  _i000011/vsync11 (vsync_OBUF)
      OBUF:I->O                 2.571          vsync_OBUF (vsync)
     ----------------------------------------
-    Total                      6.266ns (3.424ns logic, 2.842ns route)
-                                       (54.6% logic, 45.4% route)
+    Total                      6.463ns (3.424ns logic, 3.039ns route)
+                                       (53.0% logic, 47.0% route)
 
 =========================================================================
 
@@ -2727,7 +2737,7 @@ Clock to Setup on destination clock _i000003/clk25
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-_i000003/clk25 |    4.958|         |         |         |
+_i000003/clk25 |    4.953|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock _i000003/clk_out
@@ -2735,7 +2745,7 @@ Clock to Setup on destination clock _i000003/clk_out
                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------+---------+---------+---------+---------+
-_i000003/clk_out |   13.250|         |    6.999|         |
+_i000003/clk_out |   13.273|         |    6.999|         |
 _i000003/clkdiv_7|    2.743|         |    3.981|         |
 _i000008/rst     |         |         |    2.954|         |
 _i000016/PS2Cf   |         |    2.600|    4.087|         |
@@ -2757,37 +2767,37 @@ Clock to Setup on destination clock _i000012/GND_41_o_GND_41_o_AND_146_o
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-_i000003/clk25 |         |         |   13.359|         |
+_i000003/clk25 |         |         |   13.353|         |
 clk_100mhz     |         |         |   12.946|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock _i000015/GND_52_o_GND_52_o_AND_330_o
+Clock to Setup on destination clock _i000015/GND_52_o_GND_52_o_AND_379_o
 ----------------+---------+---------+---------+---------+
                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------+---------+---------+---------+---------+
-_i000003/clk25  |         |         |   10.501|         |
-_i000003/clk_out|         |         |    6.608|         |
+_i000003/clk25  |         |         |   10.296|         |
+_i000003/clk_out|         |         |    5.538|         |
 ----------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock _i000015/temp_we
+Clock to Setup on destination clock _i000015/GPIO_VGA_WE
 ------------------------------------+---------+---------+---------+---------+
                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------------------+---------+---------+---------+---------+
-_i000003/clk25                      |   11.362|         |         |         |
-_i000003/clk_out                    |    7.469|         |         |         |
-_i000015/GND_52_o_GND_52_o_AND_330_o|         |    2.974|         |         |
+_i000003/clk25                      |   11.984|         |         |         |
+_i000003/clk_out                    |    9.901|         |         |         |
+_i000015/GND_52_o_GND_52_o_AND_379_o|         |    2.868|         |         |
 ------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock _i000015/temp_we_G
-------------------+---------+---------+---------+---------+
-                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------+---------+---------+---------+---------+
-_i000003/clk25    |         |         |    7.256|         |
-_i000015/temp_we_G|         |         |    2.040|         |
-------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock _i000015/GPIO_VGA_WE_G
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+_i000003/clk25        |         |         |    7.280|         |
+_i000015/GPIO_VGA_WE_G|         |         |    2.195|         |
+----------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock _i000016/PS2Cf
 ---------------+---------+---------+---------+---------+
@@ -2799,28 +2809,28 @@ _i000016/PS2Cf |         |         |    1.415|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk_100mhz
-------------------+---------+---------+---------+---------+
-                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------+---------+---------+---------+---------+
-_i000003/clk25    |   12.023|         |   12.023|         |
-_i000003/clk_out  |         |         |    7.869|         |
-_i000015/temp_we  |    1.481|         |         |         |
-_i000015/temp_we_G|         |    1.819|         |         |
-clk_100mhz        |    5.116|         |         |         |
-------------------+---------+---------+---------+---------+
+----------------------+---------+---------+---------+---------+
+                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock          |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------+---------+---------+---------+---------+
+_i000003/clk25        |   13.045|         |   13.045|         |
+_i000003/clk_out      |         |         |    7.869|         |
+_i000015/GPIO_VGA_WE  |    1.414|         |         |         |
+_i000015/GPIO_VGA_WE_G|         |    1.840|         |         |
+clk_100mhz            |    5.116|         |         |         |
+----------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 40.00 secs
-Total CPU time to Xst completion: 40.46 secs
+Total REAL time to Xst completion: 62.00 secs
+Total CPU time to Xst completion: 62.01 secs
  
 --> 
 
-Total memory usage is 364652 kilobytes
+Total memory usage is 349028 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  255 (   0 filtered)
+Number of warnings :  259 (   0 filtered)
 Number of infos    :  105 (   0 filtered)
 

@@ -1,19 +1,19 @@
 Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Sat Mar 05 00:29:16 2016
+Wed Mar 09 19:44:35 2016
 
 drc -z SOCMF.ncd SOCMF.pcf
 
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   _i000015/GND_52_o_GND_52_o_AND_330_o is sourced by a combinatorial pin. This
+   _i000015/GND_52_o_GND_52_o_AND_379_o is sourced by a combinatorial pin. This
    is not good design practice. Use the CE pin to control the loading of data
    into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
    _i000012/GND_41_o_GND_41_o_AND_146_o is sourced by a combinatorial pin. This
    is not good design practice. Use the CE pin to control the loading of data
    into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net _i000015/temp_we_G is
+WARNING:PhysDesignRules:372 - Gated clock. Clock net _i000015/GPIO_VGA_WE_G is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs

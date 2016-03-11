@@ -19,6 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Reg_Font(
+input wire[31:0] PC,
 input wire[7:0] col,
 input wire[7:0] row,
 input[31:0] register1,
@@ -57,22 +58,27 @@ output reg[7:0] vga_data,
 output reg GPIO_VGA_WE
 );
 
-reg temp_we;
 reg[7:0] count;
 reg[3:0] num;
 reg[31:0] register;
-
-initial begin
-temp_we = 0;
-end
+reg[7:0] pos;
 
 always@* begin
-	if(col[7:0]>=10 && col[7:0]<18 && row[7:0]>=2 && row[7:0]<=33) begin
-	if(temp_we == 0) begin
-		temp_we = 1;
+	if((col[7:0]>=10 && col[7:0]<18 && row[7:0]>=2 && row[7:0]<=33) || col[7:0]==28) begin
+		if(GPIO_VGA_WE == 0) begin
 		GPIO_VGA_WE = 1;
-
+		pos[7:0] = PC[9:2] + 1;
 		count[7:0] = row[7:0]-2;
+		
+		if(col[7:0] == 28) begin
+			if(pos[7:0] == row[7:0])begin
+			vga_data[7:0] = 8'h7f;
+			end
+			else begin
+			vga_data[7:0] = 8'h20;
+			end
+		end
+		else begin
 		case(count[7:0])
 		0:register[31:0] = 32'b0;
 		1:register[31:0] = register1[31:0];
@@ -138,12 +144,11 @@ always@* begin
 		14: vga_data[7:0] = 8'h45;
 		15: vga_data[7:0] = 8'h46;
 		endcase
-		
-	end
+		end
+		end
 	end
 	else begin
 		GPIO_VGA_WE = 0;
-		temp_we = 0;
 	end
 end
 endmodule

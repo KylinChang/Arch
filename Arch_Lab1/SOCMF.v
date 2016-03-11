@@ -308,7 +308,9 @@ Font(
 .font(font_data)
 );
 
+
 Reg_Font(
+.PC(PC_out[31:0]),
 .col(col[10:3]),
 .row(row[10:3]),
 .register1(register1),
