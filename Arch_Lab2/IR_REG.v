@@ -22,12 +22,28 @@ module IR_REG(
 input wire clk,
 input wire rst,
 input wire CE,
-input wire[31:0] next_PC,
+input wire[31:0] IF_PC,
 input wire[31:0] D,
 
-output wire[31:0] IR_PC,
+output wire[31:0] ID_PC,
 output reg[31:0] Q
     );
 
+always@(posedge clk or posedge rst) begin
+	if(rst==1) begin 
+		Q[31:0] <= 32'h0000_0000;
+		ID_PC[31:0] <= 32'h0000_0000;
+	end
+	else begin
+		if(CE==1) begin
+			Q[31:0] <= D[31:0];
+			ID_PC[31:0] <= IF_PC[31:0];
+		end
+		else begin
+			Q[31:0] <= Q[31:0];
+			ID_PC[31:0] <= ID_PC[31:0];
+		end
+	end
+end
 
 endmodule

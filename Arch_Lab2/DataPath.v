@@ -27,7 +27,7 @@ input wire JAL,
 input wire WREG,
 input wire M2REG,
 input wire WMEM,
-input wire[3:0] ALUC,
+input wire[2:0] ALUC,
 input wire ALUIMM,
 input wire SHIFT,
 input wire REGRT,
@@ -46,20 +46,19 @@ output[31:0]Inst_R,
 output[31:0]data_out,
 output[31:0]M_addr,
 
-output RS_EQU_RT
+output wire RS_EQU_RT
     );
 
-wire PC_CE;
 wire[31:0] o_PC, IF_PC, ID_PC, mux_Wt_data, rdata_A, rdata_B;
 wire[31:0] Imm_32, Imm_Ext, Imm_Addr;
 wire[31:0] JAddr, JMUX_Addr, JRMUX_Addr;
-wire[31:0] Data_A, Data_B;
-
+wire[31:0] Data_A, Data_B, ID_SrcA, ID_SrcB;
+wire[4:0] RD_RT, REG_ADDR;
 /*************************  IF STAGE  *****************************/
 REG32 PC(
 .clk(clk),
 .rst(reset),
-.CE(PC_CE),
+.CE(WPCIR),
 .D(o_PC[31:0]),
 .Q(PC_Current[31:0])
 );
@@ -78,10 +77,10 @@ mux2to1_32(
 );
 
 /*************************  ID STAGE  *****************************/
-REG32 REG32_IR(
+IR_REG REG32_IR(
 .clk(clk),
-.rst(1'b0),
-.CE(IRWrite),
+.rst(reset),
+.CE(WPCIR),
 .D(data2CPU[31:0]),
 .Q(Inst_R[31:0]),
 .IF_PC(IF_PC[31:0]),
@@ -149,12 +148,72 @@ mux4to1_32 rdata_B(
 .O(Data_B[31:0])
 );
 
+EQU(
+.a(Data_A[31:0]),
+.b(Data_B[31:0]),
+.equ(RS_EQU_RT)
+);
+
 Ext_32(
 .imm_16(Inst_R[15:0]),
 .imm_32(Imm_32[31:0])
 );
 
+mux2to1_32 ID_SRCA(
+.sel(JAL),
+.a(ID_PC[31:0]),
+.b(Data_A[31:0]),
+.o(ID_SrcA[31:0])
+);
+
+mux2to1_32 ID_SRCB(
+.sel(JAL),
+.a(32'h0),
+.b(Data_B[31:0]),
+.o(ID_SrcB[31:0])
+);
+
+mux2to1_32 RD_MUX_RT(
+.sel(REGRT),
+.a(Inst_R[15:11]),
+.b(Inst_R[20:16]),
+.o(RD_RT[4:0])
+);
+
+mux2to1_32 REG_MUX_ADDR(
+.sel(JAL),
+.a(5'b11111),
+.b(RD_RT[4:0]),
+.o(REG_ADDR[4:0])
+);
 /*************************  EXE STAGE  *****************************/
+EXE_REG(
+.clk(clk),
+.rst(reset),
+.WREG(WREG),
+.M2REG(M2REG),
+.WMEM(WMEM),
+.ALUC(ALUC[2:0]),
+.ALUIMM(ALUIMM),
+.SHIFT(SHIFT),
+
+.ID_SrcA(ID_SrcA[31:0]),
+.ID_SrcB(ID_SrcB[31:0]),
+.SE(Imm_32[31:0]),
+.REG_ADDR(REG_ADDR[4:0]),
+
+output reg EWREG,
+output reg EM2REG,
+output reg EWMEM,
+output reg EALUC[2:0],
+output reg EALUIMM,
+output reg ESHIFT,
+
+output wire[31:0] EXE_SrcA,
+output wire[31:0] EXE_SrcB,
+output wire[31:0] SA,
+output wire[31:0] EXE_REG_ADDR
+);
 
 ALU(
 );

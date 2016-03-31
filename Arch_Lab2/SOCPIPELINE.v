@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module SOCPIPELINE(
+module SOC(
 input wire clk_100mhz,
 input wire[4:0] BTN,
 input wire[7:0] SW,
