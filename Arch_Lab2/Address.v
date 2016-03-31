@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    12:15:54 03/30/2016 
+// Create Date:    22:09:39 03/31/2016 
 // Design Name: 
-// Module Name:    REG32 
+// Module Name:    Address 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,28 +18,15 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module REG32(
-input wire clk,
-input wire rst,
-input wire CE,
+module Address(
+input wire[3:0] addr_head,
+input wire[25:0] addr,
 
-input wire[31:0] D,
-
-output reg[31:0] Q
+output reg[31:0] addr_out
     );
 
-always@(posedge clk or posedge rst) begin
-	if(rst==1) begin 
-		Q[31:0] <= 32'h0000_0000;
-	end
-	else begin
-		if(CE==1) begin
-			Q[31:0] <= D[31:0];
-		end
-		else begin
-			Q[31:0] <= Q[31:0];
-		end
-	end
+always@* begin
+	addr_out[31:0] <= {addr_head[3:0], addr[25:0], 2'b00};
 end
 
 endmodule

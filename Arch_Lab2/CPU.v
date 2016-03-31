@@ -33,13 +33,67 @@ output CPU_MIO,
 input INT
 );
 
+wire JAL, WREG, M2REG, WMEM, ALUIMM, SHIFT, REGRT, JR, JUMP, RS_EQU_RT, overflow;
+wire BRANCH, WPCIR;
+wire[1:0] FWDA, FDWB;
+wire[2:0] ALU_OP; 
+wire[31:0] Inst_R;
+
 
 Ctrl(
+.op(Inst_R[31:26]),
+.func(Inst_R[5:0]),
+.rs(Inst_R[25:21]),
+.rt(Inst_R[20:16]),
+.RS_EQU_RT(RS_EQU_RT),
 
+.JAL(JAL),
+.WREG(WREG),
+.M2REG(M2REG),
+.WMEM(WMEM),
+.ALUC(ALU_OP[2:0]),
+.ALUIMM(ALUIMM),
+.SHIFT(SHIFT),
+.REGRT(REGRT),
+.FWDB(FWDB[1:0]),
+.FWDA(FWDA[1:0]),
+.JR(JR),
+.JUMP(JUMP),
+
+.BRANCH(BRANCH),
+.WPCIR(WPCIR)
 );
 
-DataPath(
 
+DataPath(
+.clk(clk),
+.reset(reset),
+.MIO_ready(MIO_ready),
+					  
+.JAL(JAL),
+.WREG(WREG),
+.M2REG(M2REG),
+.WMEM(WMEM),
+.ALUC(ALU_OP[2:0]),
+.ALUIMM(ALUIMM),
+.SHIFT(SHIFT),
+.REGRT(REGRT),
+.FWDB(FWDB[1:0]),
+.FWDA(FWDA[1:0]),
+.JR(JR),
+.JUMP(JUMP),
+
+.BRANCH(BRANCH),
+.WPCIR(WPCIR),
+					  
+.PC_Current(PC_out[31:0]),
+.data2CPU(Data_in[31:0]),
+					  
+.Inst_R(Inst_R[31:0]),
+.data_out(Data_out[31:0]),
+.M_addr(Addr_out[31:0]),
+
+.RS_EQU_RT(RS_EQU_RT)
 );
 
 endmodule

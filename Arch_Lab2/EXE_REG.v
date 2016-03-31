@@ -1,0 +1,47 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    16:36:05 03/31/2016 
+// Design Name: 
+// Module Name:    EXE_REG 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module EXE_REG(
+input wire clk,
+input wire WREG,
+input wire M2REG,
+input wire WMEM,
+input wire ALUC[2:0],
+input wire ALUIMM,
+input wire SHIFT,
+
+output reg EWREG,
+output reg EM2REG,
+output reg EWMEM,
+output reg EALUC[2:0],
+output reg EALUIMM,
+output reg ESHIFT
+    );
+
+always@(posedge clk) begin
+	EWREG <= WREG;
+	EM2REG <= M2REG;
+	EWMEM <= WMEM;
+	EALUC[2:0] <= ALUC[2:0];
+	EALUIMM <= ALUIMM;
+	ESHIFT <= SHIFT;
+end
+
+endmodule

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-03-31T14:45:25</DateModified>
+  <DateModified>2016-03-31T15:48:04</DateModified>
   <ModuleName>SOCPIPELINE</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>E:/ArchWorkspace/Arch_Lab2/iseconfig/SOCPIPELINE.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/ArchWorkspace/Arch_Lab2\</ImplementationReportsDirectory>
+  <SavedFilePath>D:/GitHub/Arch/Arch_Lab2/iseconfig/SOCPIPELINE.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/GitHub/Arch/Arch_Lab2\</ImplementationReportsDirectory>
   <DateInitialized>2016-03-06T12:43:31</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
