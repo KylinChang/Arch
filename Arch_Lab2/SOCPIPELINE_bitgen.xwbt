@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.ncd
-OUTFILE=E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.bit
-FAMILY=Spartan6
-PART=xc6slx16-3csg324
-WORKINGDIR=E:\ArchWorkspace\Arch_Lab2
-LICENSE=WebPack
-USER_INFO=210957650_0_0_310
