@@ -31,7 +31,7 @@ input wire SHIFT,
 input wire[31:0] ID_SrcA,
 input wire[31:0] ID_SrcB,
 input wire[31:0] SE,
-input wire[31:0] REG_ADDR,
+input wire[4:0] REG_ADDR,
 
 output reg EWREG,
 output reg EM2REG,
@@ -43,7 +43,7 @@ output reg ESHIFT,
 output wire[31:0] EXE_SrcA,
 output wire[31:0] EXE_SrcB,
 output wire[31:0] SA,
-output wire[31:0] EXE_REG_ADDR
+output wire[4:0] EXE_REG_ADDR
     );
 
 always@(posedge clk or posedge rst) begin
@@ -71,7 +71,7 @@ always@(posedge clk or posedge rst) begin
 	EXE_SrcA[31:0] <= ID_SrcA[31:0];
 	EXE_SrcB[31:0] <= ID_SrcB[31:0];
 	SA[31:0] <= SE[31:0];
-	EXE_REG_ADDR[31:0] <= REG_ADDR[31:0];
+	EXE_REG_ADDR[4:0] <= REG_ADDR[4:0];
 	end
 	
 end

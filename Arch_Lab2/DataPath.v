@@ -39,12 +39,13 @@ input wire JUMP,
 input wire BRANCH,
 input wire WPCIR,
 					  
-output[31:0]PC_Current,
-input[31:0]data2CPU,
+output wire[31:0]PC_Current,
+input wire[31:0]inst2CPU,
+input wire[31:0]data2CPU,
 					  
-output[31:0]Inst_R,
-output[31:0]data_out,
-output[31:0]M_addr,
+output wire[31:0]Inst_R,
+output wire[31:0]data_out,
+output wire[31:0]M_addr,
 
 output wire RS_EQU_RT
     );
@@ -54,6 +55,19 @@ wire[31:0] Imm_32, Imm_Ext, Imm_Addr;
 wire[31:0] JAddr, JMUX_Addr, JRMUX_Addr;
 wire[31:0] Data_A, Data_B, ID_SrcA, ID_SrcB;
 wire[4:0] RD_RT, REG_ADDR;
+
+wire EWREG, EM2REG, EWMEM, EAUIMM, ESHIFT;
+wire[2:0] EALUC;
+wire[31:0] SA, EXE_SrcA, EXE_SrcB, EXE_REG_ADDR, ALU_SrcA, ALU_SrcB, res;
+wire zero, overflow;
+wire[4:0] EXE_REG_ADDR;
+
+wire MWREG, MM2REG, MWMEM;
+wire[4:0] MEM_REG_ADDR;
+
+wire WWREG,WM2REG;
+wire[31:0] WB_DATA,WB_MEM_A,WB_data_out;
+wire[4:0] WB_REG_ADDR;
 /*************************  IF STAGE  *****************************/
 REG32 PC(
 .clk(clk),
@@ -81,7 +95,7 @@ IR_REG REG32_IR(
 .clk(clk),
 .rst(reset),
 .CE(WPCIR),
-.D(data2CPU[31:0]),
+.D(inst2CPU[31:0]),
 .Q(Inst_R[31:0]),
 .IF_PC(IF_PC[31:0]),
 .ID_PC(ID_PC[31:0])
@@ -123,9 +137,9 @@ Regs(
 .rst(reset),
 .R_addr_A(Inst_R[25:21]),
 .R_addr_B(Inst_R[20:16]),
-.Wt_addr(mux_Wt_addr[4:0]),
-.Wt_data(mux_Wt_data[31:0]),
-.L_S(RegWrite),
+.Wt_addr(WB_REG_ADDR[4:0]),
+.Wt_data(WB_data_out[31:0]),
+.L_S(WWREG),
 .rdata_A(rdata_A[31:0]),
 .rdata_B(rdata_B[31:0])
 );
@@ -133,18 +147,18 @@ Regs(
 mux4to1_32 rdata_A(
 .sel(FWDA[1:0]),
 .A(rdata_A[31:0]),
-.B(32'b0),
-.C(32'b0),
-.D(32'b0),
+.B(res[31:0]),
+.C(data_out[31:0]),
+.D(data2CPU[31:0]),
 .O(Data_A[31:0])
 );
 
 mux4to1_32 rdata_B(
 .sel(FWDB[1:0]),
 .A(rdata_B[31:0]),
-.B(32'b0),
-.C(32'b0),
-.D(32'b0),
+.B(res[31:0]),
+.C(data_out[31:0]),
+.D(data2CPU[31:0]),
 .O(Data_B[31:0])
 );
 
@@ -202,26 +216,89 @@ EXE_REG(
 .SE(Imm_32[31:0]),
 .REG_ADDR(REG_ADDR[4:0]),
 
-output reg EWREG,
-output reg EM2REG,
-output reg EWMEM,
-output reg EALUC[2:0],
-output reg EALUIMM,
-output reg ESHIFT,
+.EWREG(EWREG),
+.EM2REG(EM2REG),
+.EWMEM(EWMEM),
+.EALUC(EALUC[2:0]),
+.EALUIMM(EALUIMM),
+.ESHIFT(ESHIFT),
 
-output wire[31:0] EXE_SrcA,
-output wire[31:0] EXE_SrcB,
-output wire[31:0] SA,
-output wire[31:0] EXE_REG_ADDR
+.EXE_SrcA(EXE_SrcA[31:0]),
+.EXE_SrcB(EXE_SrcB[31:0]),
+.SA(SA[31:0]),
+.EXE_REG_ADDR(EXE_REG_ADDR[4:0])
+);
+
+mux2to1_32 MUXA(
+.sel(ESHIFT),
+.a(SA[31:0]),
+.b(EXE_SrcA[31:0]),
+.o(ALU_SrcA[31:0])
+);
+
+mux2to1_32 MUXB(
+.sel(EALUIMM),
+.a(SA[31:0]),
+.b(EXE_SrcB[31:0]),
+.o(ALU_SrcB[31:0])
 );
 
 ALU(
+.A(ALU_SrcA[31:0]),
+.B(ALU_SrcB[31:0]),
+.ALU_operation(EALUC[2:0]),
+
+.zero(zero),
+.res(res[31:0]),
+.overflow(overflow)
 );
 
 
 /*************************  MEM STAGE  *****************************/
+MEM_REG(
+.clk(clk),
+.rst(reset),
+.EWREG(EWREG),
+.EM2REG(EM2REG),
+.EWMEM(EWMEM),
 
+.res(res[31:0]),
+.EXE_SrcB(EXE_SrcB[31:0]),
+.EXE_REG_ADDR(EXE_REG_ADDR[4:0]),
+
+.MWREG(MWREG),
+.MM2REG(MM2REG),
+.MWMEM(MWMEM),
+.DATA_MEM_A(data_out[31:0]),
+.DATA_MEM_WD(M_addr[31:0]),
+.MEM_REG_ADDR(MEM_REG_ADDR[4:0])
+);
 
 
 /*************************  WB STAGE  *****************************/
+WB_REG(
+.clk(clk),
+.rst(reset),
+
+.MWREG(MWREG),
+.MM2REG(MM2REG),
+
+.data_in(data2CPU[31:0]),
+.DATA_MEM_A(data_out[31:0]),
+.MEM_REG_ADDR(MEM_REG_ADDR[4:0]),
+
+.WWREG(WWREG),
+.WM2REG(WM2REG),
+.WB_DATA(WB_DATA[31:0]),
+.WB_MEM_A(WB_MEM_A[31:0]),
+.WB_REG_ADDR(WB_REG_ADDR[4:0])
+);
+
+mux2to1_32(
+.sel(WM2REG),
+.a(WB_DATA[31:0]),
+.b(WB_MEM_A[31:0]),
+.o(WB_data_out[31:0])
+);
+
 endmodule
