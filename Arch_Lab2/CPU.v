@@ -24,7 +24,7 @@ input reset,
 input MIO_ready,
 								
 output[31:0] PC_out,		   	//TEST
-output[31:0] inst_out,			//TEST
+output[31:0] Inst_out,			//TEST
 output mem_w,
 output[31:0] Addr_out,
 output[31:0] Data_out, 
@@ -40,8 +40,9 @@ wire[1:0] FWDA, FWDB;
 wire[2:0] ALU_OP; 
 wire[31:0] Inst_R;
 
+assign Inst_out[31:0] = Inst_in[31:0];
 
-Ctrl(
+Ctrl ctrl(
 .clk(clk),
 .reset(reset),
 .op(Inst_R[31:26]),
@@ -68,7 +69,7 @@ Ctrl(
 );
 
 
-DataPath(
+DataPath datapath(
 .clk(clk),
 .reset(reset),
 .MIO_ready(MIO_ready),

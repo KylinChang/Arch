@@ -53,7 +53,7 @@ always@(posedge clk_100mhz) begin
 		SW_OK[7:0] <= SW[7:0];
 	end
 	
-	if(button_out[0]==1) rst <= 1'b1;
+	if(button_out[2]==1) rst <= 1'b1;
 	else rst <= 1'b0;
 	
 end

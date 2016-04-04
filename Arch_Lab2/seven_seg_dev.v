@@ -106,7 +106,7 @@ Disp_num[31:0] = disp_cpudata[31:0];
 			10: SEGMENT[7:0] = 8'b10001000;
 			11: SEGMENT[7:0] = 8'b10000011;
 			12: SEGMENT[7:0] = 8'b11000110;
-			13: SEGMENT[7:0] = 8'b10010001;
+			13: SEGMENT[7:0] = 8'b10100001;
 			14: SEGMENT[7:0] = 8'b10000110;
 			default: SEGMENT[7:0] = 8'b10001110;
 			endcase

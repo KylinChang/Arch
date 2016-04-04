@@ -55,17 +55,32 @@ parameter VEX_J=10'b00000_00011;
 
 `define cpu_ctr_signals{WREG, M2REG, WMEM, ALUIMM, SHIFT,      REGRT, JAL, JR, JUMP, BRANCH}
 //WPCIR, FWDA, FWDB, ALUC needs to be configured
+always@(posedge clk) begin
+	if(reset==1) begin
+		WPCIR = 0;
+	end
+	else begin
+		HEAP[35:0] = {HEAP[23:0], op[5:0], func[5:0]};
+		case(op[5:0])
+		6'b00_0010:begin
+			WPCIR = 1;
+		end
+		endcase
+		if(WPCIR==1 && HEAP[11:6]!=6'b00_0010) begin
+			WPCIR = 0;
+		end
+	end
+end
 
-always@(posedge clk or posedge reset) begin
+always@* begin
 	if(reset == 1) begin
 		`cpu_ctr_signals <= 10'h0;
-		WPCIR <= 0;
 		FWDA[1:0] <= 2'b0;
 		FWDB[1:0] <= 2'b0;
 		ALUC[2:0] <= 3'b0;
 	end
 	else begin
-		HEAP[35:0] <= {HEAP[23:0], op[5:0], func[5:0]};
+		
 		case(op[5:0])
 		6'b00_0000: begin
 			case(func[5:0])
@@ -97,14 +112,8 @@ always@(posedge clk or posedge reset) begin
 		end
 		6'b00_0010:begin
 			`cpu_ctr_signals <= VEX_J[9:0];
-			WPCIR<=1;
 		end
 		endcase
-		
-		if(WPCIR==1 && HEAP[11:6]!=6'b00_0010) begin
-			WPCIR <= 0;
-		end
-		
 	end
 end
 

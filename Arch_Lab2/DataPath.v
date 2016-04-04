@@ -100,7 +100,7 @@ IR_REG REG32_IR(
 .ID_PC(ID_PC[31:0])
 );
 
-IMM_32(
+IMM_32 imm_32(
 .imm_16(Inst_R[15:0]),
 .imm_32(Imm_Ext[31:0])
 );
@@ -111,15 +111,15 @@ Adder Imm_Adder(
 .O(Imm_Addr[31:0])
 );
 
-Address(
-.addr_head(ID_PC[31:28]),
-.addr(Inst_R[25:0]),
-.addr_out(JAddr[31:0])
-);
+//Address address(
+//.addr_head(ID_PC[31:28]),
+//.addr(Inst_R[25:0]),
+//.addr_out(JAddr[31:0])
+//);
 
 mux2to1_32 JUMP_MUX(
 .sel(JUMP),
-.a(JAddr[31:0]),
+.a({ID_PC[31:28], Inst_R[25:0],2'b00}),
 .b(Imm_Addr[31:0]),
 .o(JMUX_Addr[31:0])
 );
@@ -131,7 +131,7 @@ mux2to1_32 JR_MUX(
 .o(JRMUX_Addr[31:0])
 );
 
-Regs(
+Regs regs(
 .clk(clk),
 .rst(reset),
 .R_addr_A(Inst_R[25:21]),
@@ -161,13 +161,13 @@ mux4to1_32 rdataB(
 .O(Data_B[31:0])
 );
 
-EQU(
+EQU equ(
 .a(Data_A[31:0]),
 .b(Data_B[31:0]),
 .equ(RS_EQU_RT)
 );
 
-Ext_32(
+Ext_32 ext_32(
 .imm_16(Inst_R[15:0]),
 .imm_32(Imm_32[31:0])
 );
@@ -200,7 +200,7 @@ mux2to1_5 REG_MUX_ADDR(
 .o(REG_ADDR[4:0])
 );
 /*************************  EXE STAGE  *****************************/
-EXE_REG(
+EXE_REG exe_reg(
 .clk(clk),
 .rst(reset),
 .WREG(WREG),
@@ -242,7 +242,7 @@ mux2to1_32 MUXB(
 .o(ALU_SrcB[31:0])
 );
 
-ALU(
+ALU alu(
 .A(ALU_SrcA[31:0]),
 .B(ALU_SrcB[31:0]),
 .ALU_operation(EALUC[2:0]),
@@ -254,7 +254,7 @@ ALU(
 
 
 /*************************  MEM STAGE  *****************************/
-MEM_REG(
+MEM_REG mem_reg(
 .clk(clk),
 .rst(reset),
 .EWREG(EWREG),
@@ -275,7 +275,7 @@ MEM_REG(
 
 
 /*************************  WB STAGE  *****************************/
-WB_REG(
+WB_REG wb_reg(
 .clk(clk),
 .rst(reset),
 
@@ -293,7 +293,7 @@ WB_REG(
 .WB_REG_ADDR(WB_REG_ADDR[4:0])
 );
 
-mux2to1_32(
+mux2to1_32 wb_data_mem(
 .sel(WM2REG),
 .a(WB_DATA[31:0]),
 .b(WB_MEM_A[31:0]),
