@@ -1,0 +1,626 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: SOCPIPELINE.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "SOCPIPELINE.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "SOCPIPELINE"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : SOCPIPELINE
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "E:\ArchWorkspace\Arch_Lab2\seven_seg_dev.v" into library work
+Parsing module <seven_seg_dev>.
+Analyzing Verilog file "E:\ArchWorkspace\Arch_Lab2\MIO_BUS.v" into library work
+Parsing module <MIO_BUS>.
+Analyzing Verilog file "E:\ArchWorkspace\Arch_Lab2\CPU.v" into library work
+Parsing module <CPU>.
+Analyzing Verilog file "E:\ArchWorkspace\Arch_Lab2\clk_div.v" into library work
+Parsing module <clk_div>.
+Analyzing Verilog file "E:\ArchWorkspace\Arch_Lab2\Anti_Jitter.v" into library work
+Parsing module <Anti_Jitter>.
+Analyzing Verilog file "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" into library work
+Parsing module <SOCPIPELINE>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <SOCPIPELINE>.
+WARNING:HDLCompiler:604 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 55: Module instantiation should have an instance name
+
+Elaborating module <clk_div>.
+
+Elaborating module <BUFG>.
+WARNING:HDLCompiler:413 - "E:\ArchWorkspace\Arch_Lab2\clk_div.v" Line 50: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:1127 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 61: Assignment to clk25 ignored, since the identifier is never used
+WARNING:HDLCompiler:604 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 65: Module instantiation should have an instance name
+
+Elaborating module <CPU>.
+WARNING:HDLCompiler:1499 - "E:\ArchWorkspace\Arch_Lab2\CPU.v" Line 21: Empty module <CPU> remains a black box.
+WARNING:HDLCompiler:1127 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 71: Assignment to inst_out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 76: Assignment to CPU_MIO ignored, since the identifier is never used
+
+Elaborating module <MIO_BUS>.
+WARNING:HDLCompiler:1127 - "E:\ArchWorkspace\Arch_Lab2\MIO_BUS.v" Line 45: Assignment to data_ram_rd ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 93: Assignment to GPIOf0000000_we ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 95: Assignment to counter_we ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 98: Assignment to ram_data_in ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 99: Assignment to ram_addr ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 100: Assignment to data_ram_we ignored, since the identifier is never used
+WARNING:HDLCompiler:604 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 104: Module instantiation should have an instance name
+
+Elaborating module <Anti_Jitter>.
+WARNING:HDLCompiler:1127 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 109: Assignment to button_pulse ignored, since the identifier is never used
+WARNING:HDLCompiler:604 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 115: Module instantiation should have an instance name
+
+Elaborating module <seven_seg_dev>.
+WARNING:HDLCompiler:634 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 42: Net <MIO_ready> does not have a driver.
+WARNING:HDLCompiler:634 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 48: Net <Inst_out[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" Line 51: Net <INT> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <SOCPIPELINE>.
+    Related source file is "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v".
+WARNING:Xst:647 - Input <PS2C> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <PS2D> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" line 55: Output port <clk25> of the instance <_i000001> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" line 65: Output port <inst_out> of the instance <_i000002> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" line 65: Output port <CPU_MIO> of the instance <_i000002> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" line 81: Output port <ram_data_in> of the instance <mio_bus> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" line 81: Output port <ram_addr> of the instance <mio_bus> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" line 81: Output port <data_ram_we> of the instance <mio_bus> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" line 81: Output port <GPIOf0000000_we> of the instance <mio_bus> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" line 81: Output port <counter_we> of the instance <mio_bus> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\ArchWorkspace\Arch_Lab2\SOCPIPELINE.v" line 104: Output port <button_pulse> of the instance <_i000003> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <LED> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <Inst_out> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <Data_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <douta> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <counter_out> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <MIO_ready> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <INT> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <SOCPIPELINE> synthesized.
+
+Synthesizing Unit <clk_div>.
+    Related source file is "E:\ArchWorkspace\Arch_Lab2\clk_div.v".
+    Found 2-bit register for signal <cnt>.
+    Found 32-bit register for signal <clkdiv>.
+    Found 1-bit register for signal <clk25>.
+    Found 32-bit adder for signal <clkdiv[31]_GND_2_o_add_0_OUT> created at line 43.
+    Found 2-bit adder for signal <cnt[1]_GND_2_o_add_2_OUT> created at line 50.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  35 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <clk_div> synthesized.
+
+Synthesizing Unit <CPU>.
+    Related source file is "E:\ArchWorkspace\Arch_Lab2\CPU.v".
+WARNING:Xst:647 - Input <Data_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <MIO_ready> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <INT> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <PC_out> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <inst_out> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <Addr_out> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <Data_out> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mem_w> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <CPU_MIO> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <CPU> synthesized.
+
+Synthesizing Unit <MIO_BUS>.
+    Related source file is "E:\ArchWorkspace\Arch_Lab2\MIO_BUS.v".
+WARNING:Xst:647 - Input <addr_bus<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <addr_bus<27:12>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	inferred  10 Multiplexer(s).
+Unit <MIO_BUS> synthesized.
+
+Synthesizing Unit <Anti_Jitter>.
+    Related source file is "E:\ArchWorkspace\Arch_Lab2\Anti_Jitter.v".
+    Found 8-bit register for signal <sw_temp>.
+    Found 32-bit register for signal <counter>.
+    Found 1-bit register for signal <pulse>.
+    Found 5-bit register for signal <button_out>.
+    Found 5-bit register for signal <button_pulse>.
+    Found 8-bit register for signal <SW_OK>.
+    Found 1-bit register for signal <rst>.
+    Found 5-bit register for signal <btn_temp>.
+    Found 32-bit adder for signal <counter[31]_GND_6_o_add_4_OUT> created at line 44.
+    Found 5-bit comparator not equal for signal <n0000> created at line 39
+    Found 8-bit comparator not equal for signal <n0002> created at line 39
+    Found 32-bit comparator greater for signal <counter[31]_GND_6_o_LessThan_4_o> created at line 43
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  65 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+Unit <Anti_Jitter> synthesized.
+
+Synthesizing Unit <seven_seg_dev>.
+    Related source file is "E:\ArchWorkspace\Arch_Lab2\seven_seg_dev.v".
+        default_num = 32'b10101010010101010101010110101010
+WARNING:Xst:647 - Input <GPIOe0000000_we> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit register for signal <AN>.
+    Found 8-bit register for signal <SEGMENT>.
+    Found 4x4-bit Read Only RAM for signal <scanning[1]_GND_7_o_wide_mux_1_OUT>
+    Found 32-bit 7-to-1 multiplexer for signal <sel[2]_Test_data7[31]_wide_mux_0_OUT> created at line 53.
+    Found 8-bit 4-to-1 multiplexer for signal <scanning[1]_sel[2]_wide_mux_3_OUT> created at line 75.
+    Found 1-bit 8-to-1 multiplexer for signal <SW[1]_sel[2]_wide_mux_4_OUT<3>> created at line 94.
+    Found 1-bit 8-to-1 multiplexer for signal <SW[1]_sel[2]_wide_mux_4_OUT<2>> created at line 94.
+    Found 1-bit 8-to-1 multiplexer for signal <SW[1]_sel[2]_wide_mux_4_OUT<1>> created at line 94.
+    Found 1-bit 8-to-1 multiplexer for signal <SW[1]_sel[2]_wide_mux_4_OUT<0>> created at line 94.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   7 Multiplexer(s).
+Unit <seven_seg_dev> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x4-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 3
+ 2-bit adder                                           : 1
+ 32-bit adder                                          : 2
+# Registers                                            : 13
+ 1-bit register                                        : 3
+ 2-bit register                                        : 1
+ 32-bit register                                       : 2
+ 4-bit register                                        : 1
+ 5-bit register                                        : 3
+ 8-bit register                                        : 3
+# Comparators                                          : 3
+ 32-bit comparator greater                             : 1
+ 5-bit comparator not equal                            : 1
+ 8-bit comparator not equal                            : 1
+# Multiplexers                                         : 19
+ 1-bit 2-to-1 multiplexer                              : 6
+ 1-bit 8-to-1 multiplexer                              : 4
+ 10-bit 2-to-1 multiplexer                             : 1
+ 2-bit 2-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 4
+ 32-bit 7-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <button_out_4> of sequential type is unconnected in block <_i000003>.
+
+Synthesizing (advanced) Unit <Anti_Jitter>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <Anti_Jitter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <clk_div>.
+The following registers are absorbed into counter <clkdiv>: 1 register on signal <clkdiv>.
+Unit <clk_div> synthesized (advanced).
+
+Synthesizing (advanced) Unit <seven_seg_dev>.
+INFO:Xst:3231 - The small RAM <Mram_scanning[1]_GND_7_o_wide_mux_1_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 4-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <scanning>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <seven_seg_dev> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x4-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 1
+ 2-bit adder                                           : 1
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 48
+ Flip-Flops                                            : 48
+# Comparators                                          : 3
+ 32-bit comparator greater                             : 1
+ 5-bit comparator not equal                            : 1
+ 8-bit comparator not equal                            : 1
+# Multiplexers                                         : 17
+ 1-bit 2-to-1 multiplexer                              : 5
+ 1-bit 8-to-1 multiplexer                              : 4
+ 10-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 4
+ 32-bit 7-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <SOCPIPELINE> ...
+
+Optimizing unit <Anti_Jitter> ...
+
+Optimizing unit <clk_div> ...
+
+Optimizing unit <seven_seg_dev> ...
+WARNING:Xst:1710 - FF/Latch <_i000004/SEGMENT_5> (without init value) has a constant value of 0 in block <SOCPIPELINE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <_i000004/SEGMENT_4> (without init value) has a constant value of 0 in block <SOCPIPELINE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <_i000004/SEGMENT_3> (without init value) has a constant value of 0 in block <SOCPIPELINE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <_i000004/SEGMENT_2> (without init value) has a constant value of 0 in block <SOCPIPELINE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <_i000004/SEGMENT_1> (without init value) has a constant value of 0 in block <SOCPIPELINE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <_i000004/SEGMENT_0> (without init value) has a constant value of 0 in block <SOCPIPELINE>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <_i000003/pulse> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000003/SW_OK_4> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000003/SW_OK_3> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000003/button_out_4> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000003/button_out_3> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000003/button_out_2> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000003/button_out_1> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000003/button_pulse_4> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000003/button_pulse_3> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000003/button_pulse_2> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000003/button_pulse_1> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000003/button_pulse_0> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000001/clkdiv_31> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000001/clkdiv_30> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000001/clkdiv_29> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000001/clkdiv_28> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000001/clkdiv_27> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000001/clkdiv_26> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000001/clkdiv_25> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000001/clkdiv_24> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000001/clk25> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000001/cnt_1> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:2677 - Node <_i000001/cnt_0> of sequential type is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <_i000003/SW_OK_5> is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <_i000003/SW_OK_6> is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <_i000003/SW_OK_7> is unconnected in block <SOCPIPELINE>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <_i000003/SW_OK_1> is unconnected in block <SOCPIPELINE>.
+INFO:Xst:2261 - The FF/Latch <_i000004/SEGMENT_7> in Unit <SOCPIPELINE> is equivalent to the following FF/Latch, which will be removed : <_i000004/SEGMENT_6> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block SOCPIPELINE, actual ratio is 1.
+FlipFlop _i000004/SEGMENT_7 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 79
+ Flip-Flops                                            : 79
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : SOCPIPELINE.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 221
+#      GND                         : 1
+#      INV                         : 3
+#      LUT1                        : 54
+#      LUT2                        : 6
+#      LUT3                        : 5
+#      LUT4                        : 18
+#      LUT5                        : 7
+#      LUT6                        : 9
+#      MUXCY                       : 61
+#      VCC                         : 1
+#      XORCY                       : 56
+# FlipFlops/Latches                : 79
+#      FD                          : 30
+#      FDC                         : 24
+#      FDE                         : 3
+#      FDE_1                       : 6
+#      FDRE                        : 16
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 33
+#      IBUF                        : 13
+#      OBUF                        : 20
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              73  out of  18224     0%  
+ Number of Slice LUTs:                  102  out of   9112     1%  
+    Number used as Logic:               102  out of   9112     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    113
+   Number with an unused Flip Flop:      40  out of    113    35%  
+   Number with an unused LUT:            11  out of    113     9%  
+   Number of fully used LUT-FF pairs:    62  out of    113    54%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                          36
+ Number of bonded IOBs:                  34  out of    232    14%  
+    IOB Flip Flops/Latches:               6
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------------+----------------------------+-------+
+Clock Signal                               | Clock buffer(FF name)      | Load  |
+-------------------------------------------+----------------------------+-------+
+clk_100mhz                                 | BUFGP                      | 73    |
+_i000001/clk_out(_i000001/Mmux_clk_out11:O)| BUFG(*)(_i000004/SEGMENT_7)| 6     |
+-------------------------------------------+----------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.135ns (Maximum Frequency: 241.844MHz)
+   Minimum input arrival time before clock: 5.115ns
+   Maximum output required time after clock: 3.597ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_100mhz'
+  Clock period: 4.135ns (frequency: 241.844MHz)
+  Total number of paths / destination ports: 3252 / 119
+-------------------------------------------------------------------------
+Delay:               4.135ns (Levels of Logic = 2)
+  Source:            _i000003/sw_temp_6 (FF)
+  Destination:       _i000003/counter_31 (FF)
+  Source Clock:      clk_100mhz rising
+  Destination Clock: clk_100mhz rising
+
+  Data Path: _i000003/sw_temp_6 to _i000003/counter_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.447   0.808  _i000003/sw_temp_6 (_i000003/sw_temp_6)
+     LUT6:I3->O            3   0.205   1.015  _i000003/button[4]_SW[7]_OR_53_o2 (_i000003/button[4]_SW[7]_OR_53_o2)
+     LUT6:I0->O           17   0.203   1.027  _i000003/button[4]_SW[7]_OR_53_o7 (_i000003/button[4]_SW[7]_OR_53_o)
+     FDRE:R                    0.430          _i000003/counter_16
+    ----------------------------------------
+    Total                      4.135ns (1.285ns logic, 2.850ns route)
+                                       (31.1% logic, 68.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_100mhz'
+  Total number of paths / destination ports: 646 / 51
+-------------------------------------------------------------------------
+Offset:              5.115ns (Levels of Logic = 3)
+  Source:            SW<5> (PAD)
+  Destination:       _i000003/counter_31 (FF)
+  Destination Clock: clk_100mhz rising
+
+  Data Path: SW<5> to _i000003/counter_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.222   1.015  SW_5_IBUF (SW_5_IBUF)
+     LUT6:I0->O            3   0.203   1.015  _i000003/button[4]_SW[7]_OR_53_o2 (_i000003/button[4]_SW[7]_OR_53_o2)
+     LUT6:I0->O           17   0.203   1.027  _i000003/button[4]_SW[7]_OR_53_o7 (_i000003/button[4]_SW[7]_OR_53_o)
+     FDRE:R                    0.430          _i000003/counter_16
+    ----------------------------------------
+    Total                      5.115ns (2.058ns logic, 3.057ns route)
+                                       (40.2% logic, 59.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock '_i000001/clk_out'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            _i000004/SEGMENT_7_1 (FF)
+  Destination:       SEGMENT<7> (PAD)
+  Source Clock:      _i000001/clk_out falling
+
+  Data Path: _i000004/SEGMENT_7_1 to SEGMENT<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q            1   0.447   0.579  _i000004/SEGMENT_7_1 (_i000004/SEGMENT_7_1)
+     OBUF:I->O                 2.571          SEGMENT_7_OBUF (SEGMENT<7>)
+    ----------------------------------------
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock _i000001/clk_out
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_100mhz     |         |         |    2.910|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_100mhz
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_100mhz     |    4.135|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.97 secs
+ 
+--> 
+
+Total memory usage is 294796 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   78 (   0 filtered)
+Number of infos    :   11 (   0 filtered)
+

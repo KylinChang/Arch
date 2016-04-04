@@ -1,0 +1,6 @@
+verilog work "seven_seg_dev.v"
+verilog work "MIO_BUS.v"
+verilog work "CPU.v"
+verilog work "clk_div.v"
+verilog work "Anti_Jitter.v"
+verilog work "SOCPIPELINE.v"
