@@ -28,6 +28,7 @@ output[31:0] inst_out,			//TEST
 output mem_w,
 output[31:0] Addr_out,
 output[31:0] Data_out, 
+input [31:0] Inst_in,
 input [31:0] Data_in,
 output CPU_MIO,
 input INT
@@ -35,12 +36,14 @@ input INT
 
 wire JAL, WREG, M2REG, WMEM, ALUIMM, SHIFT, REGRT, JR, JUMP, RS_EQU_RT, overflow;
 wire BRANCH, WPCIR;
-wire[1:0] FWDA, FDWB;
+wire[1:0] FWDA, FWDB;
 wire[2:0] ALU_OP; 
 wire[31:0] Inst_R;
 
 
 Ctrl(
+.clk(clk),
+.reset(reset),
 .op(Inst_R[31:26]),
 .func(Inst_R[5:0]),
 .rs(Inst_R[25:21]),
@@ -87,6 +90,7 @@ DataPath(
 .WPCIR(WPCIR),
 					  
 .PC_Current(PC_out[31:0]),
+.inst2CPU(Inst_in[31:0]), 
 .data2CPU(Data_in[31:0]),
 					  
 .Inst_R(Inst_R[31:0]),

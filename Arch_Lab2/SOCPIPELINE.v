@@ -45,7 +45,7 @@ wire rst;
 wire[4:0] button_out, button_pulse;
 wire[7:0] SW_OK;
 
-wire[31:0] PC_out, inst_out, Addr_out, Inst_out, Data_out, Data_in, douta, counter_out;
+wire[31:0] PC_out, inst_out, Addr_out, Inst_out, Data_out, Data_in, Inst_in, douta, counter_out;
 wire[31:0] Cpu_data4bus, Peripheral_in, ram_data_in;
 wire[9:0] ram_addr;
 wire mem_w, CPU_MIO, INT;
@@ -55,6 +55,7 @@ wire GPIOf0000000_we, GPIOe0000000_we, counter_we, data_ram_we;
 clk_div(
 .clk_100mhz(clk_100mhz),
 .rst(rst),
+.btn0(button_out[0]),
 .SW2(SW_OK[2]),
 .clkdiv(clkdiv[31:0]),
 .Clk_CPU(CLK_CPU),
@@ -72,6 +73,7 @@ CPU(
 .mem_w(mem_w),
 .Addr_out(Addr_out[31:0]),
 .Data_out(Data_out[31:0]), 
+.Inst_in(Inst_in[31:0]),
 .Data_in(Data_in[31:0]),
 .CPU_MIO(CPU_MIO),
 .INT(INT)
@@ -120,7 +122,7 @@ seven_seg_dev(
 
 .SW(SW_OK[1:0]),							//SW_OK[1:0]
 .sel(SW_OK[7:5]),						//SW_OK[7:5]
-.disp_cpudata(Peripheral_in[31:0]),			//disp_cpudata
+.disp_cpudata({Peripheral_in[31:1],button_out[0]}),			//disp_cpudata
 .Test_data1({2'b00,PC_out[31:2]}),
 .Test_data2(counter_out[31:0]),
 .Test_data3(Inst_out[31:0]),
@@ -133,4 +135,20 @@ seven_seg_dev(
 .SEGMENT(SEGMENT[7:0])
 );
 //+++++++++++++++++++++++++ seven_seg_dev ++++++++++++++++++++++++++++//
+//+++++++++++++++++++++++++ Inst_MEM ++++++++++++++++++++++++++++//
+Inst_MEM(
+.clka(clk_100mhz), // input clka
+.addra(PC_out[31:0]), // input [10 : 0] addra
+.douta(Inst_in[31:0]) // output [31 : 0] douta
+);
+//+++++++++++++++++++++++++ Inst_MEM ++++++++++++++++++++++++++++//
+//+++++++++++++++++++++++++ Data_MEM ++++++++++++++++++++++++++++//
+Data_MEM(
+.clka(clk_100mhz), // input clka
+.wea(data_ram_we), // input [0 : 0] wea
+.addra(ram_addr[9:0]), // input [10 : 0] addra
+.dina(Cpu_data4bus[31:0]), // input [31 : 0] dina
+.douta(douta[31:0]) // output [31 : 0] douta
+);
+//+++++++++++++++++++++++++ Data_MEM ++++++++++++++++++++++++++++//
 endmodule

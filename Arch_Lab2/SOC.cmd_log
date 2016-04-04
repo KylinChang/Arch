@@ -1,0 +1,40 @@
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc UCF.ucf -p xc6slx16-csg324-3 SOC.ngc SOC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o SOC_map.ncd SOC.ngd SOC.pcf 
+par -w -intstyle ise -ol high -mt off SOC_map.ncd SOC.ncd SOC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml SOC.twx SOC.ncd -o SOC.twr SOC.pcf -ucf UCF.ucf 
+bitgen -intstyle ise -f SOC.ut SOC.ncd 
+bitgen -intstyle ise -f SOC.ut SOC.ncd 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc UCF.ucf -p xc6slx16-csg324-3 SOC.ngc SOC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o SOC_map.ncd SOC.ngd SOC.pcf 
+par -w -intstyle ise -ol high -mt off SOC_map.ncd SOC.ncd SOC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml SOC.twx SOC.ncd -o SOC.twr SOC.pcf -ucf UCF.ucf 
+bitgen -intstyle ise -f SOC.ut SOC.ncd 
+xst -intstyle ise -ifn "D:/GitHub/Arch/Arch_Lab2/SOC.xst" -ofn "D:/GitHub/Arch/Arch_Lab2/SOC.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc UCF.ucf -p xc6slx16-csg324-3 SOC.ngc SOC.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o SOC_map.ncd SOC.ngd SOC.pcf 
+par -w -intstyle ise -ol high -mt off SOC_map.ncd SOC.ncd SOC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml SOC.twx SOC.ncd -o SOC.twr SOC.pcf -ucf UCF.ucf 
+bitgen -intstyle ise -f SOC.ut SOC.ncd 

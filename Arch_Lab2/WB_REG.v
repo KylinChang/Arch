@@ -42,7 +42,7 @@ always@(posedge clk or posedge rst)begin
 		WM2REG <= 0;
 		WB_DATA[31:0] <= 32'h0;
 		WB_MEM_A[31:0] <= 32'h0;
-		WB_REG_ADDR[31:0] <= 32'h0;
+		WB_REG_ADDR[4:0] <= 5'h0;
 	end
 	else begin
 		WWREG <= MWREG;

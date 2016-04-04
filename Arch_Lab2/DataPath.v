@@ -39,9 +39,9 @@ input wire JUMP,
 input wire BRANCH,
 input wire WPCIR,
 					  
-output wire[31:0]PC_Current,
-input wire[31:0]inst2CPU,
-input wire[31:0]data2CPU,
+output wire[31:0]PC_Current,//current PC 
+input wire[31:0]inst2CPU,  //instructions from Inst_MEM to CPU
+input wire[31:0]data2CPU,  //data from Data_MEM to CPU
 					  
 output wire[31:0]Inst_R,
 output wire[31:0]data_out,
@@ -60,7 +60,6 @@ wire EWREG, EM2REG, EWMEM, EAUIMM, ESHIFT;
 wire[2:0] EALUC;
 wire[31:0] SA, EXE_SrcA, EXE_SrcB, EXE_REG_ADDR, ALU_SrcA, ALU_SrcB, res;
 wire zero, overflow;
-wire[4:0] EXE_REG_ADDR;
 
 wire MWREG, MM2REG, MWMEM;
 wire[4:0] MEM_REG_ADDR;
@@ -106,7 +105,7 @@ IMM_32(
 .imm_32(Imm_Ext[31:0])
 );
 
-Adder Imm_Addr(
+Adder Imm_Adder(
 .A(ID_PC[31:0]),
 .B(Imm_Ext[31:0]),
 .O(Imm_Addr[31:0])
@@ -144,7 +143,7 @@ Regs(
 .rdata_B(rdata_B[31:0])
 );
 
-mux4to1_32 rdata_A(
+mux4to1_32 rdataA(
 .sel(FWDA[1:0]),
 .A(rdata_A[31:0]),
 .B(res[31:0]),
@@ -153,7 +152,7 @@ mux4to1_32 rdata_A(
 .O(Data_A[31:0])
 );
 
-mux4to1_32 rdata_B(
+mux4to1_32 rdataB(
 .sel(FWDB[1:0]),
 .A(rdata_B[31:0]),
 .B(res[31:0]),
@@ -187,14 +186,14 @@ mux2to1_32 ID_SRCB(
 .o(ID_SrcB[31:0])
 );
 
-mux2to1_32 RD_MUX_RT(
+mux2to1_5 RD_MUX_RT(
 .sel(REGRT),
 .a(Inst_R[15:11]),
 .b(Inst_R[20:16]),
 .o(RD_RT[4:0])
 );
 
-mux2to1_32 REG_MUX_ADDR(
+mux2to1_5 REG_MUX_ADDR(
 .sel(JAL),
 .a(5'b11111),
 .b(RD_RT[4:0]),

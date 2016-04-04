@@ -24,7 +24,7 @@ input wire rst,
 input wire WREG,
 input wire M2REG,
 input wire WMEM,
-input wire ALUC[2:0],
+input wire[2:0] ALUC,
 input wire ALUIMM,
 input wire SHIFT,
 
@@ -36,14 +36,14 @@ input wire[4:0] REG_ADDR,
 output reg EWREG,
 output reg EM2REG,
 output reg EWMEM,
-output reg EALUC[2:0],
+output reg[2:0] EALUC,
 output reg EALUIMM,
 output reg ESHIFT,
 
-output wire[31:0] EXE_SrcA,
-output wire[31:0] EXE_SrcB,
-output wire[31:0] SA,
-output wire[4:0] EXE_REG_ADDR
+output reg[31:0] EXE_SrcA,
+output reg[31:0] EXE_SrcB,
+output reg[31:0] SA,
+output reg[4:0] EXE_REG_ADDR
     );
 
 always@(posedge clk or posedge rst) begin
@@ -58,7 +58,7 @@ always@(posedge clk or posedge rst) begin
 	EXE_SrcA[31:0] <= 32'h0000_0000;
 	EXE_SrcB[31:0] <= 32'h0000_0000;
 	SA[31:0] <= 32'h0000_0000;
-	EXE_REG_ADDR[31:0] <= 32'h0000_0000;
+	EXE_REG_ADDR[4:0] <= 5'h0;
 	end
 	else begin
 	EWREG <= WREG;

@@ -1,6 +1,7 @@
 # Output products list for <Inst_MEM>
 Inst_MEM.asy
 Inst_MEM.gise
+Inst_MEM.mif
 Inst_MEM.ngc
 Inst_MEM.sym
 Inst_MEM.v
@@ -51,4 +52,5 @@ Inst_MEM\simulation\timing\wave_mti.do
 Inst_MEM\simulation\timing\wave_ncsim.sv
 Inst_MEM_flist.txt
 Inst_MEM_xmdf.tcl
+_xmsgs\pn_parser.xmsgs
 summary.log

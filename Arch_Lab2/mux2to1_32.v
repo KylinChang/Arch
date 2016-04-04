@@ -22,7 +22,7 @@ module mux2to1_32(
 input wire sel,
 input wire[31:0] a,
 input wire[31:0] b,
-output wire[31:0] o
+output reg[31:0] o
     );
 
 always@* begin

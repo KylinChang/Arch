@@ -25,7 +25,7 @@ input wire CE,
 input wire[31:0] IF_PC,
 input wire[31:0] D,
 
-output wire[31:0] ID_PC,
+output reg[31:0] ID_PC,
 output reg[31:0] Q
     );
 
@@ -35,7 +35,7 @@ always@(posedge clk or posedge rst) begin
 		ID_PC[31:0] <= 32'h0000_0000;
 	end
 	else begin
-		if(CE==1) begin
+		if(CE==0) begin
 			Q[31:0] <= D[31:0];
 			ID_PC[31:0] <= IF_PC[31:0];
 		end

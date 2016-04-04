@@ -24,7 +24,7 @@ input wire[31:0] A,
 input wire[31:0] B,
 input wire[31:0] C,
 input wire[31:0] D,
-input wire[31:0] O
+output reg[31:0] O
     );
 
 always@* begin

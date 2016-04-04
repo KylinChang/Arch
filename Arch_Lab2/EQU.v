@@ -21,7 +21,7 @@
 module EQU(
 input wire[31:0] a,
 input wire[31:0] b,
-output wire equ
+output reg equ
     );
 
 always@* begin

@@ -52,8 +52,9 @@ always@(negedge clk or posedge rst) begin
 	else begin
 		case(sel[2:0])
 		0: begin
-			if(GPIOe0000000_we) Disp_num[31:0] = disp_cpudata[31:0];
-			else Disp_num[31:0] = Disp_num[31:0];
+//			if(GPIOe0000000_we) Disp_num[31:0] = disp_cpudata[31:0];
+//			else Disp_num[31:0] = Disp_num[31:0];
+Disp_num[31:0] = disp_cpudata[31:0];
 		end
 		1: Disp_num = Test_data1; //pc[31:2]
 		2: Disp_num = Test_data2; //counter[31:0] 

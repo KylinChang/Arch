@@ -33,7 +33,7 @@ always@(posedge clk or posedge rst) begin
 		Q[31:0] <= 32'h0000_0000;
 	end
 	else begin
-		if(CE==1) begin
+		if(CE==0) begin
 			Q[31:0] <= D[31:0];
 		end
 		else begin

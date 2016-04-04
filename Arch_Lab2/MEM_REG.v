@@ -27,14 +27,14 @@ input wire EWMEM,
 
 input wire[31:0] res,
 input wire[31:0] EXE_SrcB,
-input wire[31:0] EXE_REG_ADDR,
+input wire[4:0] EXE_REG_ADDR,
 
 output reg MWREG,
 output reg MM2REG,
 output reg MWMEM,
 output reg[31:0] DATA_MEM_A,
 output reg[31:0] DATA_MEM_WD,
-output reg[31:0] MEM_REG_ADDR
+output reg[4:0] MEM_REG_ADDR
     );
 
 always@(posedge clk or posedge rst)begin
@@ -44,7 +44,7 @@ always@(posedge clk or posedge rst)begin
 		MWMEM <= 0;
 		DATA_MEM_A[31:0] <= 32'h0;
 		DATA_MEM_WD[31:0] <= 32'h0;
-		MEM_REG_ADDR[31:0] <= 32'h0;
+		MEM_REG_ADDR[4:0] <= 32'h0;
 	end
 	else begin
 		MWREG <= EWREG;
@@ -53,7 +53,7 @@ always@(posedge clk or posedge rst)begin
 		
 		DATA_MEM_A[31:0] <= res[31:0];
 		DATA_MEM_WD[31:0] <= EXE_SrcB[31:0];
-		MEM_REG_ADDR[31:0] <= EXE_REG_ADDR[31:0];
+		MEM_REG_ADDR[4:0] <= EXE_REG_ADDR[4:0];
 	end
 end
 

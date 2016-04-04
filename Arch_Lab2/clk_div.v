@@ -22,6 +22,7 @@ module clk_div(
 input wire clk_100mhz,
 input wire rst,
 input wire SW2,
+input wire btn0,
 output reg[31:0] clkdiv,
 output wire Clk_CPU,
 output reg clk25
@@ -31,7 +32,8 @@ wire clk_out;
 reg[1:0] cnt;
 initial cnt = 0;
 
-assign clk_out = (SW2)? clkdiv[23] : clkdiv[3];
+//assign clk_out = (SW2)? clkdiv[23] : clkdiv[3];
+assign clk_out = btn0;
 BUFG cc(Clk_CPU,clk_out);
 
 always@(posedge clk_100mhz or posedge rst) begin
