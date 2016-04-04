@@ -23,8 +23,8 @@ input wire clk_100mhz,
 input wire[4:0] BTN,
 input wire[7:0] SW,
 
-input wire PS2C,
-input wire PS2D,
+//input wire PS2C,
+//input wire PS2D,
 
 output wire[7:0] LED,
 output wire[7:0] SEGMENT,
