@@ -16,10 +16,10 @@ Running ngcbuild...
 Writing VEO instantiation template for 'Inst_MEM'...
 Writing Verilog behavioral simulation model for 'Inst_MEM'...
 WARNING:sim - Overwriting existing file
-   D:/GitHub/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM/doc/blk_mem_gen_v7_3_vin
-   fo.html with file from view xilinx_documentation
+   D:/CodingNet/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM/doc/blk_mem_gen_v7_3_
+   vinfo.html with file from view xilinx_documentation
 Delivered 1 file into directory
-D:/GitHub/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM
+D:/CodingNet/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM
 Generating ASY schematic symbol...
 INFO:sim:949 - Finished generation of ASY schematic symbol.
 Generating SYM schematic symbol for 'Inst_MEM'...
@@ -28,22 +28,22 @@ Regenerating ISE project file for 'Inst_MEM'...
 Generating ISE project...
 XCO file found: Inst_MEM.xco
 XMDF file found: Inst_MEM_xmdf.tcl
-Adding D:/GitHub/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.asy -view all
+Adding D:/CodingNet/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.asy -view all
 -origin_type imported
-Adding D:/GitHub/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.ngc -view all
+Adding D:/CodingNet/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.ngc -view all
 -origin_type created
-Checking file "D:/GitHub/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.ngc" for
+Checking file "D:/CodingNet/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.ngc" for
 project device match ...
-File "D:/GitHub/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.ngc" device
+File "D:/CodingNet/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.ngc" device
 information matches project device.
-Adding D:/GitHub/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.sym -view all
+Adding D:/CodingNet/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.sym -view all
 -origin_type imported
-Adding D:/GitHub/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.v -view all
+Adding D:/CodingNet/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.v -view all
 -origin_type created
 INFO:HDLCompiler:1845 - Analyzing Verilog file
-   "D:/GitHub/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.v" into library work
+   "D:/CodingNet/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.v" into library work
 INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
-Adding D:/GitHub/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.veo -view all
+Adding D:/CodingNet/Arch/Arch_Lab2/ipcore_dir/tmp/_cg/Inst_MEM.veo -view all
 -origin_type imported
 INFO:TclTasksC:2116 - The automatic calculation of top has been turned-off.
    Please set the new top explicitly by running the "project set top" command.

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/GitHub/Arch/Arch_Lab2/CPU_SIM_isim_beh.exe" -prj "D:/GitHub/Arch/Arch_Lab2/CPU_SIM_beh.prj" "work.CPU_SIM" "work.glbl" 

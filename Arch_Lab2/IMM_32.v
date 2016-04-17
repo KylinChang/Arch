@@ -23,6 +23,6 @@ input [15:0] imm_16,
 output [31:0] imm_32
     );
 
-assign imm_32 = {14'b0, imm_16[15:0], 2'b00};
+assign imm_32 = {{14{imm_16[15]}}, imm_16[15:0], 2'b00};
 
 endmodule

@@ -215,6 +215,10 @@ utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path Data_MEM.asy
 utilities_xmdf::xmdfSetData $instance FileSet $fcount type asy
 incr fcount
 
+utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path Data_MEM.mif
+utilities_xmdf::xmdfSetData $instance FileSet $fcount type AnyView
+incr fcount
+
 utilities_xmdf::xmdfSetData $instance FileSet $fcount relative_path Data_MEM.ngc
 utilities_xmdf::xmdfSetData $instance FileSet $fcount type ngc
 incr fcount

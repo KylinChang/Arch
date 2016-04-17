@@ -1,0 +1,45 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/GitHub/Arch/Arch_Lab2/CPU_SIM_isim_beh.exe -prj D:/GitHub/Arch/Arch_Lab2/CPU_SIM_beh.prj work.CPU_SIM work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/xor32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/srl32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/or_bit_32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/or32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/nor32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/mux8to1_32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/Ext1to32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/and32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/ADC32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/WB_REG.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/Regs.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/REG32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/mux4to1_32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/mux2to1_5.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/mux2to1_32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/MEM_REG.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/IR_REG.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/IMM_32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/Ext_32.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/EXE_REG.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/EQU.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/ALU.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/Address.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/Adder.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/DataPath.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/Ctrl.v" into library work
+Analyzing Verilog file "D:/GitHub/Arch/Arch_Lab2/CPU.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Parsing VHDL file "D:/GitHub/Arch/Arch_Lab2/CPU_SIM.vhd" into library work
+Starting static elaboration
+WARNING:HDLCompiler:604 - "D:/GitHub/Arch/Arch_Lab2/DataPath.v" Line 85: Module instantiation should have an instance name
+WARNING:HDLCompiler:604 - "D:/GitHub/Arch/Arch_Lab2/ALU.v" Line 36: Module instantiation should have an instance name
+WARNING:HDLCompiler:604 - "D:/GitHub/Arch/Arch_Lab2/ALU.v" Line 42: Module instantiation should have an instance name
+WARNING:HDLCompiler:604 - "D:/GitHub/Arch/Arch_Lab2/ALU.v" Line 48: Module instantiation should have an instance name
+WARNING:HDLCompiler:604 - "D:/GitHub/Arch/Arch_Lab2/ALU.v" Line 61: Module instantiation should have an instance name
+WARNING:HDLCompiler:604 - "D:/GitHub/Arch/Arch_Lab2/ALU.v" Line 67: Module instantiation should have an instance name
+WARNING:HDLCompiler:604 - "D:/GitHub/Arch/Arch_Lab2/ALU.v" Line 73: Module instantiation should have an instance name
+WARNING:HDLCompiler:604 - "D:/GitHub/Arch/Arch_Lab2/ALU.v" Line 84: Module instantiation should have an instance name
+Completed static elaboration
+ERROR:Simulator:793 - Unable to elaborate instantiated module and32

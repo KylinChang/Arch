@@ -45,6 +45,7 @@
 :: PART OF THIS FILE AT ALL TIMES.
 ::--------------------------------------------------------------------------------
 
+cp ..\..\..\Data_MEM.mif .
 
 
 vlogcomp -work work ..\..\implement\results\routed.v
