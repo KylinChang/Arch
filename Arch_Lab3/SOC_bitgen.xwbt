@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\CodingGit\Arch\Arch_Lab3\SOC.ncd
+OUTFILE=D:\CodingGit\Arch\Arch_Lab3\SOC.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=D:\CodingGit\Arch\Arch_Lab3
+LICENSE=WebPack
+USER_INFO=210957650_0_0_310
