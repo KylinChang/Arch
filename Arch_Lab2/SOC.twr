@@ -2,8 +2,8 @@
 Release 14.7 Trace  (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
--n 3 -fastpaths -xml SOC.twx SOC.ncd -o SOC.twr SOC.pcf -ucf UCF.ucf
+D:\Softwares\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise
+-v 3 -s 3 -n 3 -fastpaths -xml SOC.twx SOC.ncd -o SOC.twr SOC.pcf -ucf UCF.ucf
 
 Design file:              SOC.ncd
 Physical constraint file: SOC.pcf
@@ -36,19 +36,19 @@ Setup/Hold to clock clk_100mhz
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-BTN<0>      |    7.431(R)|      SLOW  |   -0.507(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-BTN<1>      |    8.195(R)|      SLOW  |   -0.556(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-BTN<2>      |    7.949(R)|      SLOW  |   -0.597(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-BTN<3>      |    8.289(R)|      SLOW  |   -0.663(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-BTN<4>      |    7.904(R)|      SLOW  |   -0.606(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<0>       |    6.505(R)|      SLOW  |   -0.502(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<1>       |    9.156(R)|      SLOW  |   -0.239(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<2>       |    6.450(R)|      SLOW  |   -0.022(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<3>       |    6.710(R)|      SLOW  |   -0.284(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<4>       |    6.267(R)|      SLOW  |   -0.036(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<5>       |    7.070(R)|      SLOW  |   -0.309(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<6>       |    6.916(R)|      SLOW  |   -0.111(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
-SW<7>       |    7.329(R)|      SLOW  |   -0.405(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+BTN<0>      |    6.595(R)|      SLOW  |   -0.508(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+BTN<1>      |    7.970(R)|      SLOW  |   -0.925(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+BTN<2>      |    6.066(R)|      SLOW  |   -0.533(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+BTN<3>      |    6.401(R)|      SLOW  |   -0.723(R)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+BTN<4>      |    6.511(R)|      SLOW  |   -0.459(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+SW<0>       |    5.478(R)|      SLOW  |   -0.334(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+SW<1>       |    7.288(R)|      SLOW  |   -0.140(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+SW<2>       |    5.368(R)|      SLOW  |   -0.069(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+SW<3>       |    5.784(R)|      SLOW  |   -0.372(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+SW<4>       |    5.468(R)|      SLOW  |   -0.268(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+SW<5>       |    5.416(R)|      SLOW  |   -0.205(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+SW<6>       |    5.578(R)|      SLOW  |   -0.149(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
+SW<7>       |    5.965(R)|      SLOW  |   -0.503(R)|      SLOW  |clk_100mhz_BUFGP  |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock clk_100mhz to Pad
@@ -56,18 +56,18 @@ Clock clk_100mhz to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-AN<0>       |         7.871(F)|      SLOW  |         4.354(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-AN<1>       |         7.796(F)|      SLOW  |         4.312(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-AN<2>       |         7.521(F)|      SLOW  |         4.144(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-AN<3>       |         7.607(F)|      SLOW  |         4.199(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<0>  |        10.296(F)|      SLOW  |         5.941(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<1>  |        10.347(F)|      SLOW  |         5.977(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<2>  |        10.684(F)|      SLOW  |         6.187(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<3>  |        10.655(F)|      SLOW  |         6.157(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<4>  |        10.287(F)|      SLOW  |         5.930(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<5>  |        10.283(F)|      SLOW  |         5.928(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<6>  |        10.570(F)|      SLOW  |         6.079(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
-SEGMENT<7>  |        10.326(F)|      SLOW  |         5.923(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+AN<0>       |         7.851(F)|      SLOW  |         4.354(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+AN<1>       |         7.780(F)|      SLOW  |         4.311(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+AN<2>       |         7.500(F)|      SLOW  |         4.143(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+AN<3>       |         7.591(F)|      SLOW  |         4.198(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<0>  |         8.301(F)|      SLOW  |         4.621(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<1>  |         8.531(F)|      SLOW  |         4.858(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<2>  |         8.471(F)|      SLOW  |         4.754(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<3>  |         8.413(F)|      SLOW  |         4.715(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<4>  |         8.469(F)|      SLOW  |         4.722(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<5>  |         8.566(F)|      SLOW  |         4.835(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<6>  |         8.694(F)|      SLOW  |         4.889(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
+SEGMENT<7>  |         8.369(F)|      SLOW  |         4.666(F)|      FAST  |clk_100mhz_BUFGP  |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk_100mhz
@@ -75,18 +75,18 @@ Clock to Setup on destination clock clk_100mhz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_100mhz     |    8.273|         |    6.672|         |
+clk_100mhz     |    7.375|         |    6.979|         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Mon Apr 04 23:49:01 2016 
+Analysis completed Sun Apr 17 16:43:28 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 280 MB
+Peak Memory Usage: 285 MB
 
 
 

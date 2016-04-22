@@ -21,15 +21,17 @@
 module ALU(
 input wire[31:0] A,
 input wire[31:0] B,
-input wire[2:0] ALU_operation,
+input wire[3:0] ALU_operation,
 
 output wire zero,
 output wire[31:0] res,
 output wire overflow
     );
 
-wire[31:0] o_and32,o_or32,o_xor32,o_nor32,o_srl32,o_SrcB,B_Ctrl;
+wire[31:0] o_and32,o_or32,o_xor32,o_nor32,o_srl32,o_SrcB,B_Ctrl, o_sll32, o_sra32, o_lui32;
+wire[31:0] o_sllv32, o_srlv32, o_srav32;
 wire[32:0] S;
+wire SLTU;
 
 assign overflow=S[32];
 
@@ -65,9 +67,10 @@ nor32(
 );
 
 srl32(
-.A(A[31:0]),
-.B(B[31:0]),
-.res(o_srl32[31:0])
+.A(B[31:0]),
+.B(A[31:0]),
+.o(o_srl32[31:0]),
+.o1(o_srlv32[31:0])
 );
 
 Ext1to32(
@@ -86,9 +89,46 @@ or_bit_32(
 .o(zero)
 );
 
+sll32(
+.A(B[31:0]),
+.B(A[31:0]),
+.o(o_sll32[31:0]),
+.o1(o_sllv32[31:0])
+);
+
+sra32(
+.A(B[31:0]),
+.B(A[31:0]),
+.o(o_sra32[31:0]),
+.o1(o_srav32[31:0])
+);
+
+sltu32(
+.A(A[31:0]),
+.B(B[31:0]),
+.o(SLTU)
+);
+
+lui32(
+.imm(B[31:0]),
+.o(o_lui32[31:0])
+);
 //++++++++++++++++++++++++++++++ mux8to1_32 ++++++++++++++++++++++++++++++//
-mux8to1_32 MUX(
-.sel(ALU_operation[2:0]),
+//mux8to1_32 MUX(
+//.sel(ALU_operation[2:0]),
+//.x0(o_and32[31:0]),
+//.x1(o_or32[31:0]),
+//.x2(S[31:0]),
+//.x3(o_xor32[31:0]),
+//.x4(o_nor32[31:0]),
+//.x5(o_srl32[31:0]),
+//.x6(S[31:0]),
+//.x7({31'b0000_0000_0000_0000_0000_0000_0000_000,S[32]}),
+//.o(res[31:0])
+//);
+
+mux16to1_32 MUX(
+.sel(ALU_operation[3:0]),
 .x0(o_and32[31:0]),
 .x1(o_or32[31:0]),
 .x2(S[31:0]),
@@ -97,6 +137,14 @@ mux8to1_32 MUX(
 .x5(o_srl32[31:0]),
 .x6(S[31:0]),
 .x7({31'b0000_0000_0000_0000_0000_0000_0000_000,S[32]}),
+.x8(o_sll32[31:0]),
+.x9(o_sra32[31:0]),
+.x10(o_lui32[31:0]),
+.x11(o_sllv32[31:0]),
+.x12(o_srlv32[31:0]),
+.x13(o_srav32[31:0]),
+.x14({31'b0000_0000_0000_0000_0000_0000_0000_000,SLTU}),
+.x15(0),
 .o(res[31:0])
 );
 //++++++++++++++++++++++++++++++ mux8to1_32 ++++++++++++++++++++++++++++++//

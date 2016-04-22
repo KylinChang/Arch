@@ -32,9 +32,8 @@ wire clk_out;
 reg[1:0] cnt;
 initial cnt = 0;
 
-//assign clk_out = (SW2)? clkdiv[23] : clkdiv[3];
-assign Clk_CPU = btn0;
-//BUFG cc(Clk_CPU,clk_out);
+assign clk_out = SW2 ? btn0 : clkdiv[25];
+BUFG cc(Clk_CPU,clk_out);
 
 always@(posedge clk_100mhz or posedge rst) begin
 	if(rst) begin

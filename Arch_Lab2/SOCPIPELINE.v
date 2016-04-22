@@ -45,12 +45,13 @@ wire rst;
 wire[4:0] button_out, button_pulse;
 wire[7:0] SW_OK;
 
-wire[31:0] PC_out, Addr_out, Inst_out, Data_out, Data_in, Inst_in, douta, counter_out;
+wire[31:0] PC_out, Addr_out, Inst_out, Data_out, Data_in, Inst_in, douta, counter_out,res;
 wire[31:0] Cpu_data4bus, Peripheral_in, ram_data_in;
 wire[9:0] ram_addr;
 wire mem_w, CPU_MIO, INT;
 wire GPIOf0000000_we, GPIOe0000000_we, counter_we, data_ram_we;
 
+wire[31:0] TESTA, TESTB;
 //+++++++++++++++++++++++++ clk_div ++++++++++++++++++++++++++++//
 clk_div(
 .clk_100mhz(clk_100mhz),
@@ -73,10 +74,17 @@ CPU(
 .mem_w(mem_w),
 .Addr_out(Addr_out[31:0]),
 .Data_out(Data_out[31:0]), 
+.res(res[31:0]),
 .Inst_in(Inst_in[31:0]),
-.Data_in(Data_in[31:0]),
+.Data_in(douta[31:0]),
 .CPU_MIO(CPU_MIO),
-.INT(INT)
+.INT(INT),
+.FWA(LED[1:0]),
+.FWB(LED[3:2]),
+.TESTA(TESTA),
+.TESTB(TESTB),
+.ALUOP(LED[6:4]),
+.WMEMW(LED[7])
 );
 //+++++++++++++++++++++++++ CPU ++++++++++++++++++++++++++++//
 //+++++++++++++++++++++++++ MIO_BUS +++++++++++++++++++++++++++//
@@ -124,12 +132,12 @@ seven_seg_dev(
 .sel(SW_OK[7:5]),						//SW_OK[7:5]
 .disp_cpudata(Peripheral_in[31:0]),			//disp_cpudata
 .Test_data1({2'b00,PC_out[31:2]}),
-.Test_data2(counter_out[31:0]),
+.Test_data2(douta[31:0]),
 .Test_data3(Inst_out[31:0]),
-.Test_data4(Addr_out[31:0]),
-.Test_data5(Data_out[31:0]),
-.Test_data6(Cpu_data4bus[31:0]),
-.Test_data7(PC_out[31:0]),
+.Test_data4(ram_addr[9:0]),
+.Test_data5(res[31:0]),
+.Test_data6(TESTA),
+.Test_data7(TESTB),
 
 .AN(AN[3:0]),
 .SEGMENT(SEGMENT[7:0])

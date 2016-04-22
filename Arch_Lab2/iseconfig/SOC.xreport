@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-04-04T19:11:50</DateModified>
+  <DateModified>2016-04-17T16:37:46</DateModified>
   <ModuleName>SOC</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>D:/GitHub/Arch/Arch_Lab2/iseconfig/SOC.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/GitHub/Arch/Arch_Lab2\</ImplementationReportsDirectory>
+  <SavedFilePath>D:/CodingNet/Arch/Arch_Lab2/iseconfig/SOC.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/CodingNet/Arch/Arch_Lab2\</ImplementationReportsDirectory>
   <DateInitialized>2016-04-03T22:43:45</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

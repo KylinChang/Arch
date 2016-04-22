@@ -27,10 +27,11 @@ input wire JAL,
 input wire WREG,
 input wire M2REG,
 input wire WMEM,
-input wire[2:0] ALUC,
+input wire[3:0] ALUC,
 input wire ALUIMM,
 input wire SHIFT,
 input wire REGRT,
+input wire SEXT,
 input wire[1:0] FWDB,
 input wire[1:0] FWDA,
 input wire JR,
@@ -38,6 +39,7 @@ input wire JUMP,
 
 input wire BRANCH,
 input wire WPCIR,
+input wire WMEMW,
 					  
 output wire[31:0]PC_Current,//current PC 
 input wire[31:0]inst2CPU,  //instructions from Inst_MEM to CPU
@@ -47,7 +49,11 @@ output wire[31:0]Inst_R,
 output wire[31:0]data_out,
 output wire[31:0]M_addr,
 
-output wire RS_EQU_RT
+output wire RS_EQU_RT,
+
+output wire[31:0] TESTA,
+output wire[31:0] TESTB,
+output wire[31:0] res
     );
 
 wire[31:0] o_PC, IF_PC, ID_PC, mux_Wt_data, rdata_A, rdata_B;
@@ -57,8 +63,8 @@ wire[31:0] Data_A, Data_B, ID_SrcA, ID_SrcB;
 wire[4:0] RD_RT, REG_ADDR;
 
 wire EWREG, EM2REG, EWMEM, EAUIMM, ESHIFT;
-wire[2:0] EALUC;
-wire[31:0] SA, EXE_SrcA, EXE_SrcB, EXE_REG_ADDR, ALU_SrcA, ALU_SrcB, res;
+wire[3:0] EALUC;
+wire[31:0] SA, EXE_SrcA, EXE_SrcB, EXE_REG_ADDR, ALU_SrcA, ALU_SrcB;
 wire zero, overflow;
 
 wire MWREG, MM2REG, MWMEM;
@@ -67,6 +73,9 @@ wire[4:0] MEM_REG_ADDR;
 wire WWREG,WM2REG;
 wire[31:0] WB_DATA,WB_MEM_A,WB_data_out;
 wire[4:0] WB_REG_ADDR;
+
+assign TESTA = ALU_SrcA;
+assign TESTB = ALU_SrcB;
 /*************************  IF STAGE  *****************************/
 REG32 PC(
 .clk(clk),
@@ -110,12 +119,6 @@ Adder Imm_Adder(
 .B(Imm_Ext[31:0]),
 .O(Imm_Addr[31:0])
 );
-
-//Address address(
-//.addr_head(ID_PC[31:28]),
-//.addr(Inst_R[25:0]),
-//.addr_out(JAddr[31:0])
-//);
 
 mux2to1_32 JUMP_MUX(
 .sel(JUMP),
@@ -206,9 +209,11 @@ EXE_REG exe_reg(
 .WREG(WREG),
 .M2REG(M2REG),
 .WMEM(WMEM),
-.ALUC(ALUC[2:0]),
+.ALUC(ALUC[3:0]),
 .ALUIMM(ALUIMM),
 .SHIFT(SHIFT),
+
+.WMEMW(WMEMW),
 
 .ID_SrcA(ID_SrcA[31:0]),
 .ID_SrcB(ID_SrcB[31:0]),
@@ -218,7 +223,7 @@ EXE_REG exe_reg(
 .EWREG(EWREG),
 .EM2REG(EM2REG),
 .EWMEM(EWMEM),
-.EALUC(EALUC[2:0]),
+.EALUC(EALUC[3:0]),
 .EALUIMM(EALUIMM),
 .ESHIFT(ESHIFT),
 
@@ -245,7 +250,7 @@ mux2to1_32 MUXB(
 ALU alu(
 .A(ALU_SrcA[31:0]),
 .B(ALU_SrcB[31:0]),
-.ALU_operation(EALUC[2:0]),
+.ALU_operation(EALUC[3:0]),
 
 .zero(zero),
 .res(res[31:0]),

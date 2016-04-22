@@ -21,9 +21,11 @@
 module srl32(
 	input [31:0] A,
 	input [31:0] B,
-	output [31:0] res
+	output [31:0] o,
+	output [31:0] o1
 	);
 
-	assign res = A >> B[10:6];
+	assign o = A >> B[10:6];
+	assign o1 = A >> B[31:0];
 
 endmodule

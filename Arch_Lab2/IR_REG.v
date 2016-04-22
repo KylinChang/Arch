@@ -22,6 +22,7 @@ module IR_REG(
 input wire clk,
 input wire rst,
 input wire CE,
+
 input wire[31:0] IF_PC,
 input wire[31:0] D,
 

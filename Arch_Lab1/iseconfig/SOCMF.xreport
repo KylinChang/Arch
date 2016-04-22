@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-03-09T14:06:02</DateModified>
+  <DateModified>2016-04-19T15:51:48</DateModified>
   <ModuleName>SOCMF</ModuleName>
   <SummaryTimeStamp>2016-03-03T22:31:12</SummaryTimeStamp>
-  <SavedFilePath>E:/ArchWorkspace/Arch_Lab1/iseconfig/SOCMF.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/ArchWorkspace/Arch_Lab1\</ImplementationReportsDirectory>
+  <SavedFilePath>D:/CodingNet/Arch/Arch_Lab1/iseconfig/SOCMF.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/CodingNet/Arch/Arch_Lab1\</ImplementationReportsDirectory>
   <DateInitialized>2015-05-24T19:58:34</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
